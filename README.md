@@ -59,6 +59,70 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 ## ML Business Case
 * In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
 
+First draft:
+
+BUISINESS CASE:
+
+- Better understand maternal health risk during pregnancy with the goal to define strategies and policies to decrease the health risk.
+- Understand the main indicators of low/medium/high risk
+- Predict risk for individuals or for populations
+
+Industries:
+-	Health and welfare
+    -	WHO
+    -	Local health authorities
+-	Public Policy (?)
+-	Medical
+    -	Hospitals
+    -	OB/GYN practices
+-	Research
+    -	University
+    -	Non-academic research (government, ngo etc)
+
+ML Model:
+-	Classification
+
+Questions:
+-	What is the business objective requiring an ML solution?
+    -	Predict maternal health risk based on health data collected during routine visits
+-	Is data available for the training of the model, if yes which type of data?,
+    -	Yes tabular data is available, it contains 6 features and 1 target:
+        -	Age: object
+        -	Cystilic BP: int
+        -	Diastolic BP: int
+        -	BS: int
+        -	Body temperature: int
+        -	Heart rate: int
+        -	Target: risk: object (low/medium/high)
+-	Does the customer need a dashboard or an API endpoint?
+    -	dashboard
+-	What does success look like?
+        - Dashboard with all required buisiness outputs:
+	
+-	Can you break down the project into Epics and User Stories?
+    -	Information gathering and data collection
+    - 	Data visualization, cleaning, and preparation
+    -	Model training, validation, and optimization.
+    -	Dashboard planning, designing, and development
+    -	Dashboard deployment and release.
+
+-	Ethical or Privacy concerns?
+The Project can remain ethical if we use cell image data without the patient's name or secret information
+-	What level of prediction performance is needed?
+    -	?? TBD
+-	What are the project inputs and intended outputs?
+    -	Input: health data for a patient
+    -	Output: health risk level
+-	Does the data suggest a particular model?
+-	How will the customer benefit?
+    -	Analyses the main factors that contribute to pregnancy complications to inform health practitioners or policy makers.
+    -	Makes it possible to quickly predict the maternal health risk based on basic health data that is taken during routine visits anyways.
+    -	Makes the prediction more systematic and less room for individual error
+    -	Combine with experience of health professionals!
+    -	This allows less experienced staff to make predictions based on data from many women that they could not have gathered on their own
+    -	Makes predictions quickly when under time pressure
+
+
 
 ## Dashboard Design
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
