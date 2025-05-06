@@ -108,8 +108,16 @@ Questions:
 
 -	Ethical or Privacy concerns?
 The Project can remain ethical if we use cell image data without the patient's name or secret information
+
+
 -	What level of prediction performance is needed?
-    -	?? TBD
+    -	Since this is a healthcare related project and we aim to identify high-risk patients we aim to optimize the ML classifier for recall of the high-risk class
+    -   Ideally, a recall of 80% or higher for high-risk patients is the goal
+    -   However, the dataset at hand is relatively small and also moderately imbalanced, so in this scenario a high-risk recall of 70% would also be a reasonably good performance.
+    -   With hyperparameter optimization we aim to reach a recall of above 80% but the minimum acceptable recall is 70% in this project.
+
+
+
 -	What are the project inputs and intended outputs?
     -	Input: health data for a patient
     -	Output: health risk level
