@@ -60,6 +60,12 @@ We come to these expectations by looking at general information about pregnancy 
 * [Mayo Clinic](https://www.mayoclinic.org/healthy-lifestyle/pregnancy-week-by-week/in-depth/high-risk-pregnancy/art-20047012)
 * [MSD Manuals](https://www.msdmanuals.com/home/women-s-health-issues/complications-of-pregnancy/risk-factors-for-pregnancy-complications#Problems-in-a-Previous-Pregnancy_v809815)
 
+We look for information about the role of the health data present in our dataset on the maternal health risks during pregnancy. We find that hypertension (high blood pressure), diabetes (high blood sugar) and maternal age are mentioned as some of the leading risk factors. We look to validate these hypotheses through correlation studies.
+
+### Validation
+
+Indeed in the correlation study we find that blood sugar, blood pressure (systolic and diastolic) and age are the most correlated variables to the health risk level.
+
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
 * List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
