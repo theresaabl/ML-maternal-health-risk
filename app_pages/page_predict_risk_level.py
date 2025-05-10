@@ -31,6 +31,11 @@ def page_predict_risk_level_body():
         "medical measurements."
         )
     
+    st.write(
+        "#### Predict a patients maternal health risk level:\n"
+        "The categories are low-risk, medium-risk and high-risk level."
+    )
+
     # Get Live Data for Predictions from user input
     # Create input widgets
     X_live = DrawInputWidgets()
@@ -39,7 +44,6 @@ def page_predict_risk_level_body():
     if st.button("Run Predictive Analysis"):
         health_risk_prediction = predict_health_risk(
                                         X_live,
-                                        features,
                                         pipeline_feat_eng,
                                         pipeline_model
                                         )
