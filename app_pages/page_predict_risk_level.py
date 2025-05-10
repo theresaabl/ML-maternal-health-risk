@@ -65,10 +65,10 @@ def DrawInputWidgets():
         feature = "Age"
         st_widget = st.number_input(
             label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median(),
-            step=1.0
+            min_value=int(df[feature].min()*percentageMin),
+            max_value=int(df[feature].max()*percentageMax),
+            value=int(df[feature].median()),
+            step=1
         )
     X_live[feature] = st_widget
 
