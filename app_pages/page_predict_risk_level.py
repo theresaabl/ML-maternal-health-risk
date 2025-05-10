@@ -14,12 +14,6 @@ def page_predict_risk_level_body():
     pipeline_model = load_pkl(
         f"outputs/ml_pipeline/{version}/best_features/clf_pipeline_model.pkl"
         )
-    features = (
-        pd.read_csv(
-                f"outputs/ml_pipeline/{version}/best_features/X_train.csv"
-                ).columns.to_list()
-        )
-
 
     st.write("### Predict Maternal Health Risk Levels")
 
