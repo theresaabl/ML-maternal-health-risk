@@ -1,4 +1,6 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# [Maternal Health Risk Predictor](https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/)
+
+The link to the [live site](https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/)
 
 ## Template Instructions
 
