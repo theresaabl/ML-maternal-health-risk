@@ -1,11 +1,17 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 from src.data_management import load_maternal_health_risk_data
 
 def page_health_risk_study_body():
 
     # load data for descriptive data analysis
     df = load_maternal_health_risk_data()
+    # load plots
+    distributions_plot = plt.imread(
+                            "outputs/plots/distributions_by_risk_level.png"
+                            )
+
     # Transform risk level values to catergories
     df["RiskLevel"] = df["RiskLevel"].replace({0: "low-risk", 1: "mid-risk", 2: "high-risk"})
 
@@ -85,7 +91,7 @@ def page_health_risk_study_body():
     st.write("---")
 
     if st.checkbox("Variable distributions by health risk"):
-        st.image("outputs/plots/maternal-health-risk-study/distributions_by_risk_level.png")  # noqa
+        st.image(distributions_plot)
     
     st.write("---")
 
