@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import matplotlib.pyplot as plt
 from src.data_management import load_maternal_health_risk_data
@@ -8,12 +9,20 @@ def page_health_risk_study_body():
     # load data for descriptive data analysis
     df = load_maternal_health_risk_data()
     # load plots
-    distributions_plot = plt.imread(
+    distributions_by_health_risk_plot = plt.imread(
                             "outputs/plots/distributions_by_risk_level.png"
                             )
+    # load html file, code inspiration from
+    # https://discuss.streamlit.io/t/include-an-existing-html-file-in-streamlit-app/5655/3
+    html_file = open("outputs/plots/parallel_plot.html", 'r', encoding='utf-8')
+    parallel_plot_src = html_file.read() 
 
     # Transform risk level values to catergories
-    df["RiskLevel"] = df["RiskLevel"].replace({0: "low-risk", 1: "mid-risk", 2: "high-risk"})
+    df["RiskLevel"] = df["RiskLevel"].replace({
+                                        0: "low-risk",
+                                        1: "mid-risk",
+                                        2: "high-risk"}
+                                        )
 
     # Create dataframe to show variables and units
     units_list = [
@@ -50,14 +59,14 @@ def page_health_risk_study_body():
     st.write("---")
 
     # Inspect data
-    if st.checkbox("Inspect maternal health risk dataset samples"):
+    if st.checkbox("Inspect Maternal Health Risk Dataset Samples"):
         st.write(
             f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns.\n"
-            "* Here is an interactive table showing the first 10 rows of the "
+            "* Here is an interactive table showing the first 15 rows of the "
             "dataset:"
             )
 
-        st.dataframe(df.head(10))
+        st.dataframe(df.head(15))
 
         st.write("This table shows the datatypes and units of the variables:")
         st.write(df_units)
@@ -90,8 +99,24 @@ def page_health_risk_study_body():
 
     st.write("---")
 
-    if st.checkbox("Variable distributions by health risk"):
-        st.image(distributions_plot)
+    if st.checkbox("Variable Distributions by Health Risk Level"):
+        st.image(distributions_by_health_risk_plot)
+
+        st.write(
+            "* From the figure we can see that at higher values of the "
+            "variables, the share of high-risk level generally increases.\n" \
+            "* This agrees with the results from the correlation study above."
+        )
+    
+    st.write("---")
+
+    if st.checkbox("View Parallel Plot"):
+        st.write(
+            "This interactive image visualizes the relationships of the "
+            "variables with the health risk level."
+            )
+
+        components.html(parallel_plot_src, width=1200, height = 400)
     
     st.write("---")
 
