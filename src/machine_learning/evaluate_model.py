@@ -24,8 +24,8 @@ def get_metrics(X, y, pipeline, label_map):
 
     cm = pd.DataFrame(
                 confusion_matrix(y_true=prediction, y_pred=y),
-                columns=[["Actual " + sub for sub in label_map]],
-                index=[["Prediction " + sub for sub in label_map]]
+                columns=["Actual " + sub for sub in label_map],
+                index=["Prediction " + sub for sub in label_map]
                 )
     
     return report, acc, cm
@@ -44,10 +44,10 @@ def performance(X_train, y_train, X_test, y_test, pipeline, label_map):
                                             label_map
                                             )
     st.write("#### Classification Report")
-    st.write(report_train)
+    st.dataframe(report_train)
     st.write(f"Accuracy: {acc_train}")
     st.write("#### Confusion Matrix")
-    st.write(cm_train)
+    st.dataframe(cm_train)
 
     st.write("### Test Set")
     report_test, acc_test, cm_test = get_metrics(
@@ -57,7 +57,7 @@ def performance(X_train, y_train, X_test, y_test, pipeline, label_map):
                                         label_map
                                         )
     st.write("#### Classification Report")
-    st.write(report_test)
+    st.dataframe(report_test)
     st.write(f"Accuracy: {acc_test}")
     st.write("#### Confusion Matrix")
-    st.write(cm_test)
+    st.dataframe(cm_test)
