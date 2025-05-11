@@ -58,4 +58,34 @@ def page_health_risk_study_body():
 
     st.write("---")
 
+
+    # Correlation Study
+    if st.checkbox("View Correlation Study Results"):
+        # Summary
+        st.write(
+            "We conducted a correlation study of all the variables to find "
+            "which variables are most correlated to a patient's health-risk "
+            "levels."
+        )
+        st.success(
+            "The most correlated variables to the health-risk level are:\n"
+            f"\n**{vars_corr}**"
+            )
+
+        # Text based on the "03-MaternalHealthRiskStudyB" notebook
+        # Section: "Conclusions and Next Steps"
+        st.info(
+            "From the correlation study we conclude that:\n"
+            "* Patients with high risk tend to have high blood sugar levels\n"
+            "* Patients with high risk tend to have high systolic blood pressure levels\n"
+            "* Patients with high risk tend to have high diastolic blood pressure levels\n"
+            "* Patients with high risk tend to be of a higher age\n"
+        )
+
+    st.write("---")
+
+    if st.checkbox("Variable distributions by health risk"):
+        st.image("outputs/plots/maternal-health-risk-study/distributions_by_risk_level.png")  # noqa
     
+    st.write("---")
+
