@@ -31,7 +31,7 @@ def page_model_evaluation_body():
         f"outputs/ml_pipeline/{version}/best_features/confusion_matrix.png")
     
 
-    st.write("### ML: Model and Evaluation")
+    st.write("## ML: Model and Evaluation")
 
     # display pipeline training summary
     st.info(
@@ -50,7 +50,8 @@ def page_model_evaluation_body():
 
     # show pipelines
     st.write("---")
-    st.write("#### There are 2 ML Pipelines arranged in series.")
+    st.write("### ML Pipelines")
+    st.info("There are 2 ML Pipelines arranged in series.")
 
     st.write(" * The first is responsible for feature engineering:")
     st.write(pipeline_feat_eng)
@@ -58,10 +59,15 @@ def page_model_evaluation_body():
     st.write("* The second is responsible for feature scaling and modelling:")
     st.write(pipeline_model)
 
+    st.success(
+        "The optimised model is a Random Forest Classifier with max depth 10."
+        )
+
     # show feature importance plot
     st.write("---")
-    st.write(
-        "* The model was trained on the following features (in order of "
+    st.write("### Features")
+    st.info(
+        "The model was trained on the following features (in order of "
         "importance):"
         )
     feat_list = X_train.columns.to_list()
@@ -74,6 +80,7 @@ def page_model_evaluation_body():
     # evaluate performance on train and test set
     st.write("---")
     st.write("### Pipeline Performance")
+    st.info("A summary of performance metrics for the train and test sets:")
     # Don't need to apply feature engineering pipeline since the train and test
     # set was already transformed in the jupyter notebooks
     performance(X_train=X_train, y_train=y_train,
