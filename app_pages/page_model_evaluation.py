@@ -43,10 +43,10 @@ def page_model_evaluation_body():
         "attention."
     )
     st.success(
-       "* The pipeline performance on train and test set is:\n"
-        "  * 94% and 87% for high-risk recall, respectively\n"
-        "  * 89% and 81% for low-risk precision, respectively\n"
-    )
+            "* The pipeline performance on train and test set is:\n"
+            "  * 94% and 87% for high-risk recall, respectively\n"
+            "  * 89% and 81% for low-risk precision, respectively\n"
+            )
 
     # show pipelines
     st.write("---")
