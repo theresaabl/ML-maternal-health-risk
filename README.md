@@ -143,6 +143,29 @@ Questions:
   * This allows less experienced staff to make predictions based on data from many women that they could not have gathered on their own
   * Makes predictions quickly when under time pressure
 
+## Evaluation notes:
+
+Model without winsorizer:
+
+RandomForestClassifier with max_depth 12:
+train set high-risk recall: 88%
+test set high-risk recall: 78%
+difference: 10 percentage points
+RandomForestClassifier with max_depth 8:
+train set high-risk recall: 82%
+test set high-risk recall: 75%
+difference: 7 percentage points
+
+Final model with winsorizer:
+
+* model with only best features:
+  * high-risk recall train: 94%
+  * high-risk recall test: 87%
+  * high-risk recall gap: 7 percentage points
+  * low-risk-precision train: 89%
+  * low-risk-precision test: 81%
+  * low-risk-precision gap: 8 percentage points
+
 ## Dashboard Design
 
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
