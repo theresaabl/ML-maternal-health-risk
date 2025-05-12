@@ -17,7 +17,7 @@ def page_project_hypothesis_body():
     
     st.success(
         "### Validation\n"
-        " * The correlation study on the Maternal Health Risk Study page "
+        " * The correlation study on the **Maternal Health Risk Study** page "
         "supports all four hypotheses.\n"
         "* From the correlation levels of the variables with the health risk "
         "level, we conclude that:\n"

@@ -90,8 +90,10 @@ def page_health_risk_study_body():
             "levels."
         )
         st.success(
-            "The most correlated variables to the health-risk level are:\n"
-            f"\n**{vars_corr}**"
+            "The most correlated variables to the health risk level are:  \n"
+            "  \n"
+            f"| {vars_corr[0]} | {vars_corr[1]} | {vars_corr[2]} | {vars_corr[3]} |\n"
+            "| --- | --- | --- | --- |"
             )
 
         # Text based on the "03-MaternalHealthRiskStudyB" notebook

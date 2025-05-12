@@ -39,11 +39,15 @@ def page_model_evaluation_body():
         "* The pipeline was tuned aiming at a minimum 80% recall for the "
         "high-risk class, while keeping low-risk precision above 80% as well.\n"
         "* These metrics are selected, since when predicting maternal health "
-        " risk it is essential not to miss high-risk patients and not to "
-        "falsely class someone as low-risk who might need further medical "
-        "attention."
+        " risk it is essential:\n"
+        "  * Not to miss high-risk patients.\n"
+        "  * Not to falsely class someone as low-risk who might need further "
+        "medical attention."
     )
     st.success(
+            "* The model used for the **Predict Health Risk Levels** "
+            "predictor meets these criteria and well exceeds them for most "
+            "metrics.\n"
             "* The pipeline performance on train and test set is:\n"
             "  * 94% and 87% for high-risk recall, respectively\n"
             "  * 89% and 81% for low-risk precision, respectively\n"
@@ -67,12 +71,11 @@ def page_model_evaluation_body():
     # show feature importance plot
     st.write("---")
     st.write("### Features")
+    # get features list:
+    feat_list = X_train.columns.to_list()
     st.info(
         "The model was trained on the following features (in order of "
-        "importance):"
-        )
-    feat_list = X_train.columns.to_list()
-    st.markdown(
+        "importance):\n"
         f"| {feat_list[0]} | {feat_list[1]} | {feat_list[2]} |\n"
         "| --- | --- | --- |"
         )
@@ -81,7 +84,7 @@ def page_model_evaluation_body():
     # evaluate performance on train and test set
     st.write("---")
     st.write("### Pipeline Performance")
-    st.info("A summary of performance metrics for the train and test sets:")
+    st.info("A report of performance metrics for the train and test sets:")
     # Don't need to apply feature engineering pipeline since the train and test
     # set was already transformed in the jupyter notebooks
     performance(X_train=X_train, y_train=y_train,

@@ -44,8 +44,8 @@ def page_summary_body():
         "This dataset contains medical data collected from "
         "different hospitals, community clinics and maternal health cares "
         "centers from the rural areas of Bangladesh (see dataset metadata).  \n"
-        "To inspect the dataset, pleaes see the Maternal Health Risk "
-        "Study page."
+        "To inspect the dataset, pleaes see the **Maternal Health Risk** "
+        "**Study** page."
         )
 
     st.write("---")
