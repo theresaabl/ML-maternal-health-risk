@@ -92,7 +92,8 @@ def page_health_risk_study_body():
         st.success(
             "The most correlated variables to the health risk level are:  \n"
             "  \n"
-            f"| {vars_corr[0]} | {vars_corr[1]} | {vars_corr[2]} | {vars_corr[3]} |\n"
+            f"| {vars_corr[0]} | {vars_corr[1]} | {vars_corr[2]} "
+            f"| {vars_corr[3]} |\n"
             "| --- | --- | --- | --- |"
             )
 
@@ -101,8 +102,10 @@ def page_health_risk_study_body():
         st.info(
             "From the correlation study we conclude that:\n"
             "* Patients with high risk tend to have high blood sugar levels\n"
-            "* Patients with high risk tend to have high systolic blood pressure levels\n"
-            "* Patients with high risk tend to have high diastolic blood pressure levels\n"
+            "* Patients with high risk tend to have high systolic blood "
+            "pressure levels\n"
+            "* Patients with high risk tend to have high diastolic blood "
+            "pressure levels\n"
             "* Patients with high risk tend to be of a higher age\n"
         )
         st.write(
@@ -131,8 +134,8 @@ def page_health_risk_study_body():
 
     if st.checkbox("Parallel Plot to Visualize Variable Relationships"):
         st.write(
-            "This expandable interactive image visualizes the relationships of the "
-            "variables with the health risk level."
+            "This expandable interactive image visualizes the relationships "
+            "of the variables with the health risk level."
             )
 
         vars_corr.append("RiskLevel")

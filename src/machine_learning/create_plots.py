@@ -16,7 +16,8 @@ def create_parallel_plot(df):
     diastolic_bp_map = [-np.inf, 60, 70, 80, 90, np.inf]
     age_map = [-np.inf, 18, 24, 30, 40, np.inf]
 
-    # Use ArbritaryDiscretiser from feature_engine and specify the category ranges
+    # Use ArbritaryDiscretiser from feature_engine and specify
+    # the category ranges
     disc = ArbitraryDiscretiser(binning_dict={
                                     "BloodSugar": blood_sugar_map,
                                     "SystolicBP": systolic_bp_map,
