@@ -15,7 +15,7 @@ def page_summary_body():
         ">\n"
         " --  [UN SDGs](https://sdgs.un.org/goals/goal3)"
     )
-    st.info(
+    st.write(
         "Maternal health is a public health aspect of global interest.  \n"
         "There are many different complications that can occur during "
         "pregnancy and childbirth which can pose a risk on the mother as well "
@@ -30,6 +30,8 @@ def page_summary_body():
         "are usually taken during routine doctor's visits."
     )
     
+    st.write("---")
+
     # Based on README file - "Dataset Content" section
     st.write("### Dataset Summary")
     st.write(
@@ -46,6 +48,8 @@ def page_summary_body():
         "Study page."
         )
 
+    st.write("---")
+
     # Link to README file, for full project documentation
     st.write(
         "### Full Documentation\n"
@@ -53,6 +57,7 @@ def page_summary_body():
         "[Project README file](https://github.com/theresaabl/ML-maternal-health-risk)."  # noqa
         )
 
+    st.write("---")
 
     # Based on README file - "Business Requirements" section
     st.write(

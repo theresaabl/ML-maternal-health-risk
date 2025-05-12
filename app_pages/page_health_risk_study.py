@@ -47,19 +47,26 @@ def page_health_risk_study_body():
 
     st.write("## Maternal Health Risk Study")
 
+    st.success(
+        "* This page answers business requirement 1:\n"
+        "> Improve understanding of maternal health risks during pregnancy:\n"
+        ">   * Identify key indicators associated with low, medium, and "
+        "high risk.\n"
+        ">\n"
+    )
     st.info(
         "* The client is interested in understanding the relationships "
         "between the patients' medical data and their maternal health risk.\n"
-        "* We present the main results from our descriptive analysis on this "
-        "page.\n"
-        "* We present the variables most correlated to the health risk-level "
-        "and their distributions over the health-risk."
+        "* We present the dataset and the main results of our descriptive "
+        "analysis on this page:\n"
+        "  * The variables most correlated to the health risk level\n"
+        "  * Their distributions by health risk level."
         )
     
     st.write("---")
 
     # Inspect data
-    if st.checkbox("Inspect Maternal Health Risk Dataset Samples"):
+    if st.checkbox("#### Inspect Maternal Health Risk Dataset"):
         st.write(
             f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns.\n"
             "* Here is an interactive table showing the first 15 rows of the "
@@ -68,14 +75,14 @@ def page_health_risk_study_body():
 
         st.dataframe(df.head(15))
 
-        st.write("This table shows the datatypes and units of the variables:")
+        st.write("* This table shows the datatypes and units of the variables:")
         st.write(df_units)
 
-    st.write("---")
+        st.write("---")
 
 
     # Correlation Study
-    if st.checkbox("View Correlation Study Results"):
+    if st.checkbox("#### Correlation Study Results"):
         # Summary
         st.write(
             "We conducted a correlation study of all the variables to find "
@@ -103,7 +110,7 @@ def page_health_risk_study_body():
             "and is not required to make predictions for maternal health risk."
             )
 
-    st.write("---")
+        st.write("---")
 
     if st.checkbox("Variable Distributions by Health Risk Level"):
         st.image(distributions_by_health_risk_plot)
@@ -118,9 +125,9 @@ def page_health_risk_study_body():
             "high-risk distribution."
         )
     
-    st.write("---")
+        st.write("---")
 
-    if st.checkbox("View Parallel Plot"):
+    if st.checkbox("Parallel Plot to Visualize Variable Relationships"):
         st.write(
             "This expandable interactive image visualizes the relationships of the "
             "variables with the health risk level."
@@ -131,6 +138,4 @@ def page_health_risk_study_body():
 
         fig_parallel = create_parallel_plot(df_select)
         
-        st.plotly_chart(fig_parallel, use_container_width=False)
-
-    st.write("---")
+        st.plotly_chart(fig_parallel)
