@@ -14,6 +14,12 @@ def page_health_risk_study_body():
     distributions_by_health_risk_plot = plt.imread(
                             "outputs/plots/distributions_by_risk_level.png"
                             )
+    heatmap_corr = plt.imread(
+                            "outputs/plots/correlation_spearman_heatmap.png"
+                            )
+    heatmap_pps = plt.imread(
+                        "outputs/plots/pps_heatmap.png"
+                        )
 
     # Keep original dataframe and create copy
     df = df0.copy()
@@ -110,10 +116,30 @@ def page_health_risk_study_body():
         )
         st.write(
             "Note that the two blood pressure types are strongly "
-            "correlated between themselves, as one would expect. "
+            "correlated between themselves, as one would expect "
+            "(see heatmaps below).  \n"
             "Thus, the DiastolicBP variable will be dropped in model training "
             "and is not required to make predictions for maternal health risk."
             )
+
+        st.write("---")
+    
+    # Correlation and PPS Heatmaps
+    if st.checkbox("#### Correlation and PPS Heatmaps"):
+        st.write(
+            "* Below are the Spearman correlation and the predictive power "
+            "score heatmaps to visualize the correlations and PPS between "
+            "the variables and the target, as well as between the variables "
+            "themselves.\n"
+            "* The plots show the results that were explained in the "
+            "**Correlation Study Results** section above."
+        )
+
+        st.image(heatmap_corr)
+        
+        st.write("---")
+
+        st.image(heatmap_pps)
 
         st.write("---")
 
