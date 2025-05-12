@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from feature_engine.discretisation import ArbitraryDiscretiser
 import plotly.express as px
 
