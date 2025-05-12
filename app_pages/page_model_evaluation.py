@@ -26,9 +26,9 @@ def page_model_evaluation_body():
         f"outputs/ml_pipeline/{version}/best_features/y_test.csv").values
     # plots
     feat_importance_plot = plt.imread(
-        f"outputs/ml_pipeline/{version}/best_features/feature_importance.png")
+        f"outputs/plots/feature_importance.png")
     confusion_matrix_plot = plt.imread(
-        f"outputs/ml_pipeline/{version}/best_features/confusion_matrix.png")
+        f"outputs/plots/confusion_matrix.png")
     
 
     st.write("## ML: Model and Evaluation")
