@@ -76,6 +76,15 @@ def create_parallel_plot(df):
                             # template='plotly_dark',
                             color_continuous_scale=px.colors.sequential.Plasma
                             )
-    fig_parallel.update_traces(tickfont_size=10)
+    fig_parallel.update_traces(
+                    tickfont=dict(
+                                size=12,
+                                color="black"
+                                ),
+                    labelfont=dict(
+                                size=15,
+                                color="black"
+                                ),
+                    )
 
     return fig_parallel

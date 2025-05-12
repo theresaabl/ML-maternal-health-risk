@@ -127,6 +127,6 @@ def page_health_risk_study_body():
 
         fig_parallel = create_parallel_plot(df_select)
         
-        st.plotly_chart(fig_parallel)
+        st.plotly_chart(fig_parallel, use_container_width=False)
 
     st.write("---")
