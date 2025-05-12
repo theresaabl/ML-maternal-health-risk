@@ -3,22 +3,22 @@ import streamlit.components.v1 as components
 import pandas as pd
 import matplotlib.pyplot as plt
 from src.data_management import load_maternal_health_risk_data
+from src.machine_learning.create_plots import create_parallel_plot
+
 
 def page_health_risk_study_body():
 
     # load data for descriptive data analysis
-    df = load_maternal_health_risk_data()
+    df0 = load_maternal_health_risk_data()
     # load plots
     distributions_by_health_risk_plot = plt.imread(
                             "outputs/plots/distributions_by_risk_level.png"
                             )
-    # load html file, code inspiration from
-    # https://discuss.streamlit.io/t/include-an-existing-html-file-in-streamlit-app/5655/3
-    html_file = open("outputs/plots/parallel_plot.html", 'r', encoding='utf-8')
-    parallel_plot_src = html_file.read() 
 
+    # Keep original dataframe and create copy
+    df = df0.copy()
     # Transform risk level values to catergories
-    df["RiskLevel"] = df["RiskLevel"].replace({
+    df["RiskLevel"] = df0["RiskLevel"].replace({
                                         0: "low-risk",
                                         1: "mid-risk",
                                         2: "high-risk"}
@@ -96,6 +96,12 @@ def page_health_risk_study_body():
             "* Patients with high risk tend to have high diastolic blood pressure levels\n"
             "* Patients with high risk tend to be of a higher age\n"
         )
+        st.write(
+            "Note that the two blood pressure types are strongly "
+            "correlated between themselves, as one would expect. "
+            "Thus, the DiastolicBP variable will be dropped in model training "
+            "and is not required to make predictions for maternal health risk."
+            )
 
     st.write("---")
 
@@ -112,11 +118,15 @@ def page_health_risk_study_body():
 
     if st.checkbox("View Parallel Plot"):
         st.write(
-            "This interactive image visualizes the relationships of the "
+            "This expandable interactive image visualizes the relationships of the "
             "variables with the health risk level."
             )
 
-        components.html(parallel_plot_src, width=1200, height = 400)
-    
-    st.write("---")
+        vars_corr.append("RiskLevel")
+        df_select = df0.filter(vars_corr)
 
+        fig_parallel = create_parallel_plot(df_select)
+        
+        st.plotly_chart(fig_parallel)
+
+    st.write("---")
