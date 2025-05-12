@@ -31,10 +31,21 @@ def predict_health_risk(X_live, pipeline_feat_eng, pipeline_model):
         result = "high"
 
     statement = (
-        f"### Prediction:\n #### {result.capitalize()} health risk\n"
+        f"### Prediction:\n > #### {result.capitalize()} health risk  \n"
         )
+    
+    st.write("---")
+    # Display in different style depending on category
+    if prediction == 0:
+        st.success(statement)
+    elif prediction == 1:
+        st.warning(statement)
+    else:
+        st.error(statement)
 
-    st.write(statement)
-    st.write("The probabilities for the patient to belong to each of the categories are:")
+    st.write(
+        "The probabilities for the patient to belong to each of the "
+        "categories are:"
+        )
     st.dataframe(prediction_prob)
     return prediction

@@ -18,24 +18,25 @@ def page_predict_risk_level_body():
     st.write("## Predict Maternal Health Risk Levels")
 
     st.info(
-        "* The client is interested in determining the maternal health risk "
-        "level of a given patient.\n"
-        "* This page contains an interface that allows users to predict "
-        "a given patients health risk level by entering a number of "
-        "medical measurements."
+        "This page answers business requirement 2:\n"
+        "> Provide a machine learning–based tool to predict maternal health "
+        "risk levels for individual patients, supporting early intervention.\n"
+        ">\n"
         )
+    st.write("---")
     
     st.write(
-        "#### Predict a patients maternal health risk level:\n"
-        "The categories are low-risk, medium-risk and high-risk level."
+        "#### Predict a patients maternal health risk level:"
     )
+    st.info("The categories are low-risk, medium-risk and high-risk.")
+    st.write("Please fill in the following measurements for the patient:")
 
     # Get Live Data for Predictions from user input
     # Create input widgets
     X_live = DrawInputWidgets()
 
     # predict on live data
-    if st.button("Run Predictive Analysis"):
+    if st.button("Predict Health Risk", type="primary"):
         health_risk_prediction = predict_health_risk(
                                         X_live,
                                         pipeline_feat_eng,
