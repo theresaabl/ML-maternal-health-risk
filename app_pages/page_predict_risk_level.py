@@ -15,7 +15,7 @@ def page_predict_risk_level_body():
         f"outputs/ml_pipeline/{version}/best_features/clf_pipeline_model.pkl"
         )
 
-    st.write("### Predict Maternal Health Risk Levels")
+    st.write("## Predict Maternal Health Risk Levels")
 
     st.info(
         "* The client is interested in determining the maternal health risk "

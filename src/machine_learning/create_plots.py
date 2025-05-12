@@ -75,6 +75,8 @@ def create_parallel_plot(df):
                             # template='plotly_dark',
                             color_continuous_scale=px.colors.sequential.Plasma
                             )
+    # Code to change label font size in plotly:
+    # https://stackoverflow.com/a/72034697
     fig_parallel.update_traces(
                     tickfont=dict(
                                 size=12,

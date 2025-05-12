@@ -45,7 +45,7 @@ def page_health_risk_study_body():
     vars_corr = ['BloodSugar', 'SystolicBP', 'DiastolicBP', 'Age']
 
 
-    st.write("### Maternal Health Risk Study")
+    st.write("## Maternal Health Risk Study")
 
     st.info(
         "* The client is interested in understanding the relationships "
@@ -109,9 +109,13 @@ def page_health_risk_study_body():
         st.image(distributions_by_health_risk_plot)
 
         st.write(
-            "* From the figure we can see that at higher values of the "
-            "variables, the share of high-risk level generally increases.\n" \
-            "* This agrees with the results from the correlation study above."
+            "* From the figure we can see that as the variable values "
+            "increase, so does the share of high-risk level.\n" \
+            "* This agrees with the results from the correlation study above.\n"
+            "* It is interesting to note that from the age distribution plot "
+            "we can see that the risk also seems to be higher for the age "
+            "range below 20, however the older age ranges are dominant in the "
+            "high-risk distribution."
         )
     
     st.write("---")

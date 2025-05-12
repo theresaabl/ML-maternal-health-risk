@@ -31,7 +31,7 @@ def predict_health_risk(X_live, pipeline_feat_eng, pipeline_model):
         result = "high"
 
     statement = (
-        f"### Prediction:\n #### {result.capitalize()} maternal health risk\n"
+        f"### Prediction:\n #### {result.capitalize()} health risk\n"
         )
 
     st.write(statement)

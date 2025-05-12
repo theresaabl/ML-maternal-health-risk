@@ -107,7 +107,7 @@ Questions:
 * Is data available for the training of the model, if yes which type of data?
   * Yes tabular data is available, it contains 6 features and 1 target:
     * Age: object
-    * Cystilic BP: int
+    * Systolic BP: int
     * Diastolic BP: int
     * BS: int
     * Body temperature: int
@@ -143,7 +143,7 @@ Questions:
   * This allows less experienced staff to make predictions based on data from many women that they could not have gathered on their own
   * Makes predictions quickly when under time pressure
 
-## Evaluation notes:
+## Evaluation notes
 
 Model without winsorizer:
 

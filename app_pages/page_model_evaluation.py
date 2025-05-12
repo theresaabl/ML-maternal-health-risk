@@ -34,6 +34,7 @@ def page_model_evaluation_body():
     st.write("## ML: Model and Evaluation")
 
     # display pipeline training summary
+    st.write("### Summary")
     st.info(
         "* The pipeline was tuned aiming at a minimum 80% recall for the "
         "high-risk class, while keeping low-risk precision above 80% as well.\n"
