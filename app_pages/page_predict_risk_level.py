@@ -62,9 +62,6 @@ def DrawInputWidgets():
     # Create input widgets for 3 most important features
     col1, col2, col3 = st.columns(3)
 
-    # We are using these features to feed the ML pipeline - values copied from
-    # check_variables_for_UI() result
-
     # create an empty DataFrame, which will be the live data
     X_live = pd.DataFrame([], index=[0])
 
@@ -104,4 +101,3 @@ def DrawInputWidgets():
     X_live[feature] = st_widget
 
     return X_live
-    
