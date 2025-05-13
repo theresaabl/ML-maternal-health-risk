@@ -48,7 +48,7 @@ def page_summary_body():
         "UCI Machine Learning Repository. https://doi.org/10.24432/C5DP5D.\n"
         ">\n"
         "This dataset contains medical data collected from "
-        "different hospitals, community clinics and maternal health cares "
+        "different hospitals, community clinics and maternal health care "
         "centers from the rural areas of Bangladesh "
         "(see dataset metadata).  \n"
         "To inspect the dataset, pleaes see the **Maternal Health Risk** "

@@ -1,52 +1,47 @@
 # [Maternal Health Risk Predictor](https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/)
 
-The link to the [live site](https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/t/theresaabl/ML-maternal-health-risk)](https://www.github.com/theresaabl/ML-maternal-health-risk/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/theresaabl/ML-maternal-health-risk)](https://www.github.com/theresaabl/ML-maternal-health-risk/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/theresaabl/ML-maternal-health-risk)](https://www.github.com/theresaabl/ML-maternal-health-risk)
 
-## Template Instructions
+Live Site - [Maternal Health Risk Predictor](https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/)
 
-Welcome,
+![screenshot](documentation/mock-up.png)
 
-This is the Code Institute student template for the bring your own data project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+source: [Maternal Health Risk Predictor amiresponsive](https://ui.dev/amiresponsive?url=https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/)
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+## Introduction
 
-## How to use this repo
+Improving maternal health during pregnancy and childbirth is part of the UN sustainable developement goals (SDGs):
 
-1. Use this template to create your GitHub project repo
+>'A woman dies every two minutes from preventable causes related to pregnancy and childbirth.'
+>
+ --  [UN SDGs](https://sdgs.un.org/goals/goal3)
 
-1. In your newly created repo click on the green Code button.
+Maternal health is a public health aspect of global interest.
 
-1. Then, from the Codespaces tab, click Create codespace on main.
+There are many different complications that can occur during pregnancy and childbirth which can pose a risk on the mother as well as the baby.
 
-1. Wait for the workspace to open. This can take a few minutes.
+It is of great importance to reduce these complications and with this project we aim to make a small contribution to towards this goal. We will study patients health data and explore which health factors play the leading roles in determining whether a patient falls into the low-, medium- or high-risk categories.
 
-1. Open a new terminal and `pip3 install -r requirements.txt`
-
-1. Open the jupyter_notebooks directory, and click on the notebook you want to open.
-
-1. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+We will also provide a machine-learning based tool to predict a patient's risk level from basic medical measurements, which are are usually taken during routine doctor's visits.
 
 ## Dataset Content
+
+We use the Maternal Health Risk dataset from [UCI](https://archive.ics.uci.edu/dataset/863/maternal+health+risk) for our analysis:
+
+> Ahmed, M. (2020). Maternal Health Risk [Dataset]. UCI Machine Learning Repository [https://doi.org/10.24432/C5DP5D](https://doi.org/10.24432/C5DP5D).
+>
+
+This dataset contains medical data collected from different hospitals, community clinics and maternal health care centers from the rural areas of Bangladesh (see dataset metadata).
 
 * Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size and to have a shorter model training time. If you are doing an image recognition project, we suggest you consider using an image shape that is 100px × 100px or 50px × 50px, to ensure the model meets the performance requirement but is smaller than 100Mb for a smoother push to GitHub. A reasonably sized image set is ~5000 images, but you can choose ~10000 lines for numeric or textual data.
 
 ## Business Requirements
 
-* Describe your business requirements
+1. Improve understanding of maternal health risks during pregnancy:
+   * Identify key indicators associated with low, medium, and high risk.
+2. Provide a machine learning–based tool to predict maternal health risk levels for individual patients, supporting early intervention.
 
 ## Hypothesis and how to validate?
 
@@ -171,10 +166,6 @@ Final model with winsorizer:
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
 * Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
 
-## Unfixed Bugs
-
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
-
 ## Deployment
 
 ### Heroku
@@ -194,22 +185,142 @@ Final model with winsorizer:
 
 * Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
 
-## Credits
+## User Stories
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
+Examples:
+
+### EPIC: User Authentication
+
+As a Confirmed Resident I can register an account so that I can access a resident dashboard.
+
+User Stories:
+
+* As a Site User I can sign up for an account so that I can request to get access to a resident dashboard.
+* As a Site Administrator I can see all requests for a new user account so that I can confirm accounts for SharedSpaces residents only.
+* As a Confirmed Resident I can login and logout of my account so that I can access a resident dashboard.
+* As a Site User I can see a message when login does not work (yet) so that I can know whether my account has been approved yet or not.
+
+## Conclusions and Future Directions
+
+## Tools & Technologies
+
+| Tool / Tech | Use |
+| --- | --- |
+| [![badge](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://markdown.2bn.dev) | Generate README and TESTING templates. |
+| [![badge](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) | Version control. (`git add`, `git commit`, `git push`) |
+| [![badge](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) | Secure online code storage and Codespace for cloud developement. |
+| [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end and front-end programming language. |
+| [![badge](https://img.shields.io/badge/Streamlit-grey?logo=streamlit&logoColor=3776AB)](https://streamlit.io/) | App framework to create front-end. |
+| [![badge](https://img.shields.io/badge/Jupyter-grey?logo=jupyter&logoColor=3776AB)](https://jupyter.org/) | Descriptive and predictive data analysis and documentation for the back-end. |
+| [![badge](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) | Hosting the deployed back-end site. |
+| [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, and explain things. |
+
+## Testing
+
+> [!NOTE]
+> For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+## Deployment
+
+The live deployed application can be found deployed on [Heroku](https://shared-spaces-f588831ae867.herokuapp.com).
+
+### Heroku Deployment
+
+Example:
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Deployment steps are as follows, after account setup:
+
+- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), then finally, click **Create App**.
+- From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables to match your private `env.py` file.
+
+Heroku needs some additional files in order to deploy properly.
+
+- [requirements.txt](requirements.txt)
+- [Procfile](Procfile)
+
+You can install this project's **[requirements.txt](requirements.txt)** (*where applicable*) using:
+
+- `pip3 install -r requirements.txt`
+
+If you have your own packages that have been installed, then the requirements file needs updated using:
+
+- `pip3 freeze --local > requirements.txt`
+
+The **[Procfile](Procfile)** can be created with the following command:
+
+- `echo web: gunicorn app_name.wsgi > Procfile`
+- *replace `app_name` with the name of your primary Django app name; the folder where `settings.py` is located*
+
+For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+
+Either (*recommended*):
+
+- Select **Automatic Deployment** from the Heroku app.
+
+Or:
+
+- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+- Set the remote for Heroku: `heroku git:remote -a app_name` (*replace `app_name` with your app name*)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
+	- `git push heroku main`
+
+The project should now be connected and deployed to Heroku!
+
+### Local Development
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the [requirements.txt](requirements.txt) file.
+
+- `pip3 install -r requirements.txt`.
+
+You will need to create a new file called `env.py` at the root-level, and include the same environment variables listed above from the Heroku deployment steps.
+
+> [!IMPORTANT]
+> This is a sample only; you would replace the values with your own if cloning/forking my repository.
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://www.github.com/theresaabl/shared-spaces).
+2. Locate and click on the green "Code" button at the very top, above the commits and files.
+3. Select whether you prefer to clone using "HTTPS", "SSH", or "GitHub CLI", and click the "copy" button to copy the URL to your clipboard.
+4. Open "Git Bash" or "Terminal".
+5. Change the current working directory to the location where you want the cloned directory.
+6. In your IDE Terminal, type the following command to clone the repository:
+	- `git clone https://www.github.com/theresaabl/shared-spaces.git`
+7. Press "Enter" to create your local clone.
+
+#### Forking
+
+By forking the GitHub Repository, you make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://www.github.com/theresaabl/shared-spaces).
+2. At the top of the Repository, just below the "Settings" button on the menu, locate and click the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+### Local VS Deployment
+
+There are no remaining major differences between the local version when compared to the deployed version online.
+
+## Credits
 
 ### Content
 
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+| Source | Notes |
+| --- | --- |
+| [Maternal Health Risk Dataset](https://archive.ics.uci.edu/dataset/863/maternal+health+risk) | Dataset for this project |
+| [Markdown Builder](https://markdown.2bn.dev) | Help generating Markdown files used as basis of parts of this documentation |
+| [Churnometer](https://github.com/Code-Institute-Solutions/churnometer) | Code Institute walkthrough project inspiration, several custom functions used and adapted throughout the project |
+| [ChatGPT](https://chatgpt.com) | Help with debugging and explanations |
+| [Stackoverflow](https://stackoverflow.com/a/59839952) | Change label font size in seaborn plot |
+| [Stackoverflow](https://stackoverflow.com/a/72034697) | Change tick and label font size in plotly express plot |
 
-### Media
+### Acknowledgements
 
-* The photos used on the home and sign-up page are from This Open-Source site
-* The images used for the gallery page were taken from this other open-source site
-
-## Acknowledgements (optional)
-
-* Thank the people who provided support through this project.
+* I would like to thank my Code Institute mentor, [Mo Shami](https://github.com/mshami) for the support throughout the development of this project.
+* I would like to thank my Code Institute mentor, [Tim Nelson](https://www.github.com/TravelTimN) for providing a great template for the documentation of this project.
