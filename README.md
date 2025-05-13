@@ -8,36 +8,36 @@ Live Site - [Maternal Health Risk Predictor](https://maternal-health-risk-predic
 
 ![screenshot](documentation/mock-up.png)
 
-source: [Maternal Health Risk Predictor amiresponsive](https://ui.dev/amiresponsive?url=https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/)
+source: [Maternal Health Risk Predictor - amiresponsive](https://ui.dev/amiresponsive?url=https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/)
 
-## Introduction
+## Summary
 
 Improving maternal health during pregnancy and childbirth is part of the UN sustainable developement goals (SDGs):
 
 >'A woman dies every two minutes from preventable causes related to pregnancy and childbirth.'
 >
- --  [UN SDGs](https://sdgs.un.org/goals/goal3)
+> \-  [UN SDGs](https://sdgs.un.org/goals/goal3)
 
 Maternal health is a public health aspect of global interest.
-
 There are many different complications that can occur during pregnancy and childbirth which can pose a risk on the mother as well as the baby.
-
 It is of great importance to reduce these complications and with this project we aim to make a small contribution to towards this goal. We will study patients health data and explore which health factors play the leading roles in determining whether a patient falls into the low-, medium- or high-risk categories.
-
 We will also provide a machine-learning based tool to predict a patient's risk level from basic medical measurements, which are are usually taken during routine doctor's visits.
 
 ## Dataset Content
 
 We use the Maternal Health Risk dataset from [UCI](https://archive.ics.uci.edu/dataset/863/maternal+health+risk) for our analysis:
 
-> Ahmed, M. (2020). Maternal Health Risk [Dataset]. UCI Machine Learning Repository [https://doi.org/10.24432/C5DP5D](https://doi.org/10.24432/C5DP5D).
+> Ahmed, M. (2020). Maternal Health Risk [Dataset].
+> UCI Machine Learning Repository [https://doi.org/10.24432/C5DP5D](https://doi.org/10.24432/C5DP5D).
 >
 
 This dataset contains medical data collected from different hospitals, community clinics and maternal health care centers from the rural areas of Bangladesh (see dataset metadata).
 
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size and to have a shorter model training time. If you are doing an image recognition project, we suggest you consider using an image shape that is 100px × 100px or 50px × 50px, to ensure the model meets the performance requirement but is smaller than 100Mb for a smoother push to GitHub. A reasonably sized image set is ~5000 images, but you can choose ~10000 lines for numeric or textual data.
+* Describe your dataset.
 
 ## Business Requirements
+
+There are two business requirements agreed on with the stakeholders:
 
 1. Improve understanding of maternal health risks during pregnancy:
    * Identify key indicators associated with low, medium, and high risk.
@@ -45,7 +45,7 @@ This dataset contains medical data collected from different hospitals, community
 
 ## Hypothesis and how to validate?
 
-We state with the following three hypothesis:
+We state the following three hypotheses:
 
 * We expect patients in the high risk category to have high blood pressure.
 * We expect patients in the high risk category to have high blood sugar.
@@ -202,18 +202,32 @@ User Stories:
 
 ## Conclusions and Future Directions
 
-## Tools & Technologies
+## Tools, Technologies and Python Libraries
 
 | Tool / Tech | Use |
 | --- | --- |
 | [![badge](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://markdown.2bn.dev) | Generate README and TESTING templates. |
 | [![badge](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) | Version control. (`git add`, `git commit`, `git push`) |
-| [![badge](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) | Secure online code storage and Codespace for cloud developement. |
+| [![badge](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) | Secure online code storage and Codespaces as cloud IDE for development. |
+| [![badge](https://img.shields.io/badge/Jupyter-grey?logo=jupyter&logoColor=F37626)](https://jupyter.org/) | Descriptive and predictive data analysis and documentation for the back-end. |
 | [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end and front-end programming language. |
-| [![badge](https://img.shields.io/badge/Streamlit-grey?logo=streamlit&logoColor=3776AB)](https://streamlit.io/) | App framework to create front-end. |
-| [![badge](https://img.shields.io/badge/Jupyter-grey?logo=jupyter&logoColor=3776AB)](https://jupyter.org/) | Descriptive and predictive data analysis and documentation for the back-end. |
+| [![badge](https://img.shields.io/badge/Streamlit-grey?logo=streamlit&logoColor=FF4B4B)](https://streamlit.io/) | App framework to create front-end. |
 | [![badge](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) | Hosting the deployed back-end site. |
 | [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, and explain things. |
+| [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end and front-end programming language. |
+| [![badge](https://img.shields.io/badge/Pandas-grey?logo=pandas&logoColor=150458)](https://pandas.pydata.org/) | Library for data structures and data analysis tools. |
+| [![badge](https://img.shields.io/badge/Numpy-grey?logo=numpy&logoColor=013243)](https://numpy.org/) | Library for scientific computing. |
+| [![badge](https://img.shields.io/badge/Scipy-grey?logo=numpy&logoColor=8CAAE6)](https://scipy.org/) | Library for fundamental algorithms for scientific computing in Python. |
+| [![badge](https://img.shields.io/badge/Ydata-Profiling-grey)](https://docs.profiling.ydata.ai/latest/) | Library for data profiling. |
+| [![badge](https://img.shields.io/badge/Matplotlib-grey)](https://matplotlib.org/) | Library for visualizations in Python. |
+| [![badge](https://img.shields.io/badge/Seaborn-grey)](https://seaborn.pydata.org/) | Library for statistical data visualizations. |
+| [![badge](https://img.shields.io/badge/Plotly-Express-grey?logo=plotly&logoColor=3F4F75)](https://plotly.com/python/plotly-express/) | Library for interactive charts. |
+| [![badge](https://img.shields.io/badge/Feature-Engine-grey)](https://feature-engine.trainindata.com/en/latest/) |  Library with multiple transformers to engineer and select features for machine learning models. |
+| [![badge](https://img.shields.io/badge/ppscore-grey)](https://pypi.org/project/ppscore/) |  Library with python implementation of the Predictive Power Score. |
+| [![badge](https://img.shields.io/badge/Scikit-Learn-grey?logo=plotly&logoColor=F7931E)](https://scikit-learn.org/stable/) | Library for predictive data analysis. |
+| [![badge](https://img.shields.io/badge/XGBoost-grey)](https://xgboost.readthedocs.io/en/release_3.0.0/) |  Library for optimized distributed gradient boosting. |
+| [![badge](https://img.shields.io/badge/Imbalanced-Learn-grey)](https://imbalanced-learn.org/stable/) |  Library for classification with imbalanced classes. |
+| [![badge](https://img.shields.io/badge/Joblib-grey)](https://joblib.readthedocs.io/en/stable/) |  Library for lightweight pipelining in Python. |
 
 ## Testing
 
@@ -258,14 +272,14 @@ For Heroku deployment, follow these steps to connect your own GitHub repository 
 
 Either (*recommended*):
 
-- Select **Automatic Deployment** from the Heroku app.
+* Select **Automatic Deployment** from the Heroku app.
 
 Or:
 
-- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
-- Set the remote for Heroku: `heroku git:remote -a app_name` (*replace `app_name` with your app name*)
-- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
-	- `git push heroku main`
+* In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+* Set the remote for Heroku: `heroku git:remote -a app_name` (*replace `app_name` with your app name*)
+* After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
+	* `git push heroku main`
 
 The project should now be connected and deployed to Heroku!
 
@@ -275,7 +289,7 @@ This project can be cloned or forked in order to make a local copy on your own s
 
 For either method, you will need to install any applicable packages found within the [requirements.txt](requirements.txt) file.
 
-- `pip3 install -r requirements.txt`.
+* `pip3 install -r requirements.txt`.
 
 You will need to create a new file called `env.py` at the root-level, and include the same environment variables listed above from the Heroku deployment steps.
 
@@ -292,7 +306,7 @@ You can clone the repository by following these steps:
 4. Open "Git Bash" or "Terminal".
 5. Change the current working directory to the location where you want the cloned directory.
 6. In your IDE Terminal, type the following command to clone the repository:
-	- `git clone https://www.github.com/theresaabl/shared-spaces.git`
+	* `git clone https://www.github.com/theresaabl/shared-spaces.git`
 7. Press "Enter" to create your local clone.
 
 #### Forking
@@ -313,8 +327,8 @@ There are no remaining major differences between the local version when compared
 
 | Source | Notes |
 | --- | --- |
-| [Maternal Health Risk Dataset](https://archive.ics.uci.edu/dataset/863/maternal+health+risk) | Dataset for this project |
-| [Markdown Builder](https://markdown.2bn.dev) | Help generating Markdown files used as basis of parts of this documentation |
+| [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/863/maternal+health+risk) | Maternal Health Risk Dataset - dataset for this project |
+| [Markdown Builder](https://markdown.2bn.dev) | Help generating Markdown files used as basis for parts of this documentation |
 | [Churnometer](https://github.com/Code-Institute-Solutions/churnometer) | Code Institute walkthrough project inspiration, several custom functions used and adapted throughout the project |
 | [ChatGPT](https://chatgpt.com) | Help with debugging and explanations |
 | [Stackoverflow](https://stackoverflow.com/a/59839952) | Change label font size in seaborn plot |
