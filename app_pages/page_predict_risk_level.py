@@ -5,7 +5,11 @@ from src.data_management import load_maternal_health_risk_data, load_pkl
 from src.machine_learning.predictive_analysis import predict_health_risk
 
 def page_predict_risk_level_body():
-
+    """
+    Predict Health Risk Levels Page Body
+    Provide ML tool to make predictions on health risk
+    Handle user inputs, make predictions and display results
+    """
     # load predict health risk level files
     version = 'v1'
     pipeline_feat_eng = load_pkl(
@@ -37,14 +41,17 @@ def page_predict_risk_level_body():
 
     # predict on live data
     if st.button("Predict Health Risk", type="primary"):
-        health_risk_prediction = predict_health_risk(
-                                        X_live,
-                                        pipeline_feat_eng,
-                                        pipeline_model
-                                        )
+        predict_health_risk(
+                        X_live,
+                        pipeline_feat_eng,
+                        pipeline_model
+                        )
 
 def DrawInputWidgets():
-
+    """
+    Handles the input widgets for the health data
+    Code inspiration from Code Institute Churnometer walkthrough project
+    """
     # load maternal health risk dataset
     df = load_maternal_health_risk_data()
     # to calculate min and max possible input values

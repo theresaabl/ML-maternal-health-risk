@@ -1,7 +1,10 @@
 import streamlit as st
 
 def page_project_hypothesis_body():
-
+    """
+    Project Hyptheses and Validation Page Body
+    Display hypotheses and validation
+    """
     st.write("## Project Hypotheses and Validation")
 
     st.info(

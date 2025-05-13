@@ -1,7 +1,11 @@
 import streamlit as st
 
 def page_summary_body():
-
+    """
+    Project Summary Page Body
+    Displays project summary including dataset summary, link to README
+    and business requirements
+    """
     st.write("## Project Summary")
 
     # Based on README file - Introduction section

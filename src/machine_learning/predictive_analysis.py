@@ -2,7 +2,12 @@ import streamlit as st
 import pandas as pd
 
 def predict_health_risk(X_live, pipeline_feat_eng, pipeline_model):
-
+    """
+    Predict maternal health risk level
+    Takes live data, feature engineering and model pipelines as inputs
+    and returns the prediction
+    Prints the prediction statement to streamlit dashboard
+    """
     # apply feat engine pipeline to live data
     X_live_feat_eng = pipeline_feat_eng.transform(X_live)
 

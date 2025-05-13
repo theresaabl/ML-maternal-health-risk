@@ -34,7 +34,7 @@ def get_metrics(X, y, pipeline, label_map):
 def performance(X_train, y_train, X_test, y_test, pipeline, label_map):
     """
     Displays classification reports and confusion matrices for train and 
-    test sets
+    test sets as dataframes
     """
     st.write("### Train Set")
     report_train, acc_train, cm_train = get_metrics(

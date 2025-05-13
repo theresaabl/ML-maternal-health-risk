@@ -5,7 +5,10 @@ from src.data_management import load_pkl
 from src.machine_learning.evaluate_model import performance
 
 def page_model_evaluation_body():
-
+    """
+    Model and Evaluation Page Body
+    Displays pipeline details and performance metrics
+    """
     # load files for model evaluation
     version = 'v1'
     # pipelines

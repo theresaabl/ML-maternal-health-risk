@@ -7,7 +7,10 @@ from src.machine_learning.create_plots import create_parallel_plot
 
 
 def page_health_risk_study_body():
-
+    """
+    Health Risk Study Page Body
+    Displays predictive analysis results
+    """
     # load data for descriptive data analysis
     df0 = load_maternal_health_risk_data()
     # load plots
