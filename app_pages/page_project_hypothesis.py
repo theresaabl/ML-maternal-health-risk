@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def page_project_hypothesis_body():
     """
     Project Hyptheses and Validation Page Body
@@ -11,13 +12,13 @@ def page_project_hypothesis_body():
         "### Hypotheses\n"
         "1. We expect that high-risk patients tend to have high blood sugar "
         "levels.\n"
-        "2. We expect that high-risk patients tend to have high systolic blood "
-        "pressure levels.\n"
+        "2. We expect that high-risk patients tend to have high systolic "
+        "blood pressure levels.\n"
         "3. We expect that high-risk patients tend to have high diastolic "
         "blood pressure levels.\n"
         "4. We expect that high-risk patients tend to be of a higher age."
         )
-    
+
     st.success(
         "### Validation\n"
         " * The correlation study on the **Maternal Health Risk Study** page "

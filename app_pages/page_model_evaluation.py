@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from src.data_management import load_pkl
 from src.machine_learning.evaluate_model import performance
 
+
 def page_model_evaluation_body():
     """
     Model and Evaluation Page Body
@@ -13,7 +14,7 @@ def page_model_evaluation_body():
     version = 'v1'
     # pipelines
     pipeline_feat_eng = load_pkl(
-        f"outputs/ml_pipeline/{version}/best_features/clf_pipeline_feat_eng.pkl"
+        f"outputs/ml_pipeline/{version}/best_features/clf_pipeline_feat_eng.pkl"  # noqa
         )
     pipeline_model = load_pkl(
         f"outputs/ml_pipeline/{version}/best_features/clf_pipeline_model.pkl"
@@ -32,7 +33,6 @@ def page_model_evaluation_body():
         f"outputs/plots/feature_importance.png")
     confusion_matrix_plot = plt.imread(
         f"outputs/plots/confusion_matrix.png")
-    
 
     st.write("## ML: Model and Evaluation")
 
@@ -40,7 +40,8 @@ def page_model_evaluation_body():
     st.write("### Summary")
     st.info(
         "* The pipeline was tuned aiming at a minimum 80% recall for the "
-        "high-risk class, while keeping low-risk precision above 80% as well.\n"
+        "high-risk class, while keeping low-risk precision above 80% as "
+        "well.\n"
         "* These metrics are selected, since when predicting maternal health "
         " risk it is essential:\n"
         "  * Not to miss high-risk patients.\n"
@@ -90,10 +91,14 @@ def page_model_evaluation_body():
     st.info("A report of performance metrics for the train and test sets:")
     # Don't need to apply feature engineering pipeline since the train and test
     # set was already transformed in the jupyter notebooks
-    performance(X_train=X_train, y_train=y_train,
-                    X_test=X_test, y_test=y_test,
-                    pipeline=pipeline_model,
-                    label_map=["low-risk", "mid-risk", "high-risk"])
+    performance(
+        X_train=X_train,
+        y_train=y_train,
+        X_test=X_test,
+        y_test=y_test,
+        pipeline=pipeline_model,
+        label_map=["low-risk", "mid-risk", "high-risk"]
+        )
     # show confusion matrix plot
     st.write("---")
     st.write("#### Visualization")

@@ -19,7 +19,7 @@ def get_metrics(X, y, pipeline, label_map):
                                             output_dict=True
                                             )).T
     # drop accuracy from table and store in separate var
-    acc = np.round(report.loc[["accuracy"]].iloc[0, 0],2)
+    acc = np.round(report.loc[["accuracy"]].iloc[0, 0], 2)
     report.drop(index="accuracy", inplace=True)
 
     cm = pd.DataFrame(
@@ -27,13 +27,13 @@ def get_metrics(X, y, pipeline, label_map):
                 columns=["Actual " + sub for sub in label_map],
                 index=["Prediction " + sub for sub in label_map]
                 )
-    
+
     return report, acc, cm
 
 
 def performance(X_train, y_train, X_test, y_test, pipeline, label_map):
     """
-    Displays classification reports and confusion matrices for train and 
+    Displays classification reports and confusion matrices for train and
     test sets as dataframes
     """
     st.write("### Train Set")

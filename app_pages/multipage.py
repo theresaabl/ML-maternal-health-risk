@@ -1,6 +1,7 @@
 import streamlit as st
 
-class MultiPage: 
+
+class MultiPage:
     """
     Create an instance of MultiPage
     Class to generate multiple streamlit pages
@@ -12,12 +13,12 @@ class MultiPage:
         st.set_page_config(
             page_title=self.app_name,
             page_icon=":hospital:")
-    
+
     def add_page(self, title, func) -> None:
         """
         Add a page to the multipage app
         """
-        self.pages.append({"title": title, "function": func })
+        self.pages.append({"title": title, "function": func})
 
     def run(self):
         """
@@ -30,4 +31,4 @@ class MultiPage:
             self.pages,
             format_func=lambda page: page['title']
             )
-        page['function']() 
+        page['function']()

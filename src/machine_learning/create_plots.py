@@ -22,8 +22,8 @@ def create_parallel_plot(df):
                                     "BloodSugar": blood_sugar_map,
                                     "SystolicBP": systolic_bp_map,
                                     "DiastolicBP": diastolic_bp_map,
-                                    "Age": age_map}
-                                    )
+                                    "Age": age_map
+                                    })
 
     # Store data in a new dataframe
     df_parallel = disc.fit_transform(df)
@@ -32,7 +32,7 @@ def create_parallel_plot(df):
     # adapted from only one to several variables
     vars_cat = ["BloodSugar", "SystolicBP", "DiastolicBP", "Age"]
     n_classes_list = [
-        len(blood_sugar_map) - 1, 
+        len(blood_sugar_map) - 1,
         len(systolic_bp_map) - 1,
         len(diastolic_bp_map) - 1,
         len(age_map) - 1
@@ -52,7 +52,7 @@ def create_parallel_plot(df):
                 labels_map_list[ind][n] = f">{classes_ranges_list[ind][-1]}"
             else:
                 labels_map_list[ind][n] = f"{classes_ranges_list[ind][n-1]} to {classes_ranges_list[ind][n]}"  # noqa
-    
+
     for ind, var in enumerate(vars_cat):
         df_parallel[var] = df_parallel[var].replace(labels_map_list[ind])
 
@@ -70,10 +70,9 @@ def create_parallel_plot(df):
     fig_parallel = px.parallel_categories(
                             df_parallel,
                             dimensions=dimensions_parallel,
-                            labels = {"RiskLabel": "RiskLevel"},
+                            labels={"RiskLabel": "RiskLevel"},
                             color="RiskLevel",
                             title="Variables and RiskLevel Parallel Plot",
-                            # template='plotly_dark',
                             color_continuous_scale=px.colors.sequential.Plasma
                             )
     # Code to change label font size in plotly:

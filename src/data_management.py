@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+
 @st.cache_data
 def load_maternal_health_risk_data():
     """

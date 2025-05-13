@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+
 def predict_health_risk(X_live, pipeline_feat_eng, pipeline_model):
     """
     Predict maternal health risk level
@@ -38,7 +39,7 @@ def predict_health_risk(X_live, pipeline_feat_eng, pipeline_model):
     statement = (
         f"### Prediction:\n > #### {result.capitalize()} health risk  \n"
         )
-    
+
     st.write("---")
     # Display in different style depending on category
     if prediction == 0:

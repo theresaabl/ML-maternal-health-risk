@@ -4,6 +4,7 @@ import pandas as pd
 from src.data_management import load_maternal_health_risk_data, load_pkl
 from src.machine_learning.predictive_analysis import predict_health_risk
 
+
 def page_predict_risk_level_body():
     """
     Predict Health Risk Levels Page Body
@@ -13,7 +14,7 @@ def page_predict_risk_level_body():
     # load predict health risk level files
     version = 'v1'
     pipeline_feat_eng = load_pkl(
-        f"outputs/ml_pipeline/{version}/best_features/clf_pipeline_feat_eng.pkl"
+        f"outputs/ml_pipeline/{version}/best_features/clf_pipeline_feat_eng.pkl"  # noqa
         )
     pipeline_model = load_pkl(
         f"outputs/ml_pipeline/{version}/best_features/clf_pipeline_model.pkl"
@@ -28,7 +29,7 @@ def page_predict_risk_level_body():
         ">\n"
         )
     st.write("---")
-    
+
     st.write(
         "#### Predict a patients maternal health risk level:"
     )
@@ -46,6 +47,7 @@ def page_predict_risk_level_body():
                         pipeline_feat_eng,
                         pipeline_model
                         )
+
 
 def DrawInputWidgets():
     """
@@ -102,3 +104,4 @@ def DrawInputWidgets():
     X_live[feature] = st_widget
 
     return X_live
+    

@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def page_summary_body():
     """
     Project Summary Page Body
@@ -11,7 +12,7 @@ def page_summary_body():
     # Based on README file - Introduction section
     st.info(
         "Improving maternal health during pregnancy and childbirth is part "
-        "of the UN sustainable developement goals (SDGs):" 
+        "of the UN sustainable developement goals (SDGs):"
         )
     st.error(
         ">'A woman dies every two minutes from preventable causes related to "
@@ -24,8 +25,9 @@ def page_summary_body():
         "There are many different complications that can occur during "
         "pregnancy and childbirth which can pose a risk on the mother as well "
         "as the baby.  \n"
-        "It is of great importance to reduce these complications and with this "
-        "project we aim to make a small contribution to towards this goal.  \n"
+        "It is of great importance to reduce these complications and with "
+        "this project we aim to make a small contribution to towards "
+        "this goal.  \n"
         "We will study patients health data and explore which health factors "
         "play the leading roles in determining whether a patient falls into "
         "the low-, medium- or high-risk categories.  \n"
@@ -33,7 +35,7 @@ def page_summary_body():
         "patient's risk level from basic medical measurements, which are "
         "are usually taken during routine doctor's visits."
     )
-    
+
     st.write("---")
 
     # Based on README file - "Dataset Content" section
@@ -41,13 +43,14 @@ def page_summary_body():
     st.write(
         "We use the Maternal Health Risk dataset from "
         "[UCI](https://archive.ics.uci.edu/dataset/863/maternal+health+risk) "
-        "for our analysis:\n" 
+        "for our analysis:\n"
         "> Ahmed, M. (2020). Maternal Health Risk [Dataset]. "
         "UCI Machine Learning Repository. https://doi.org/10.24432/C5DP5D.\n"
         ">\n"
         "This dataset contains medical data collected from "
         "different hospitals, community clinics and maternal health cares "
-        "centers from the rural areas of Bangladesh (see dataset metadata).  \n"
+        "centers from the rural areas of Bangladesh "
+        "(see dataset metadata).  \n"
         "To inspect the dataset, pleaes see the **Maternal Health Risk** "
         "**Study** page."
         )

@@ -53,7 +53,6 @@ def page_health_risk_study_body():
     # Copied from maternal health risk study A notebook
     vars_corr = ['BloodSugar', 'SystolicBP', 'DiastolicBP', 'Age']
 
-
     st.write("## Maternal Health Risk Study")
 
     st.success(
@@ -71,24 +70,26 @@ def page_health_risk_study_body():
         "  * The variables most correlated to the health risk level\n"
         "  * Their distributions by health risk level."
         )
-    
+
     st.write("---")
 
     # Inspect data
     if st.checkbox("#### Inspect Maternal Health Risk Dataset"):
         st.write(
-            f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns.\n"
-            "* Here is an interactive table showing the first 15 rows of the "
-            "dataset:"
+            f"* The dataset has {df.shape[0]} rows and {df.shape[1]} "
+            "columns.\n"
+            "* Here is an interactive table showing the first 15 rows of "
+            "the dataset:"
             )
 
         st.dataframe(df.head(15))
 
-        st.write("* This table shows the datatypes and units of the variables:")
+        st.write(
+                "* This table shows the datatypes and units of the variables:"
+                )
         st.write(df_units)
 
         st.write("---")
-
 
     # Correlation Study
     if st.checkbox("#### Correlation Study Results"):
@@ -126,7 +127,7 @@ def page_health_risk_study_body():
             )
 
         st.write("---")
-    
+
     # Correlation and PPS Heatmaps
     if st.checkbox("#### Correlation and PPS Heatmaps"):
         st.write(
@@ -139,7 +140,7 @@ def page_health_risk_study_body():
         )
 
         st.image(heatmap_corr)
-        
+
         st.write("---")
 
         st.image(heatmap_pps)
@@ -151,14 +152,15 @@ def page_health_risk_study_body():
 
         st.write(
             "* From the figure we can see that as the variable values "
-            "increase, so does the share of high-risk level.\n" \
-            "* This agrees with the results from the correlation study above.\n"
+            "increase, so does the share of high-risk level.\n"
+            "* This agrees with the results from the correlation study "
+            "above.\n"
             "* It is interesting to note that from the age distribution plot "
             "we can see that the risk also seems to be higher for the age "
             "range below 20, however the older age ranges are dominant in the "
             "high-risk distribution."
         )
-    
+
         st.write("---")
 
     if st.checkbox("Parallel Plot to Visualize Variable Relationships"):
@@ -171,5 +173,5 @@ def page_health_risk_study_body():
         df_select = df0.filter(vars_corr)
 
         fig_parallel = create_parallel_plot(df_select)
-        
+
         st.plotly_chart(fig_parallel)
