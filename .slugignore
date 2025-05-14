@@ -2,3 +2,5 @@ inputs/
 **/all_features/
 documentation/
 jupyter_notebooks/
+outputs/datasets/collection/
+*.md

@@ -20,8 +20,8 @@ Improving maternal health during pregnancy and childbirth is part of the UN sust
 
 Maternal health is a public health aspect of global interest.
 There are many different complications that can occur during pregnancy and childbirth which can pose a risk on the mother as well as the baby.
-It is of great importance to reduce these complications and with this project we aim to make a small contribution to towards this goal. We will study patients health data and explore which health factors play the leading roles in determining whether a patient falls into the low-, medium- or high-risk categories.
-We will also provide a machine-learning based tool to predict a patient's risk level from basic medical measurements, which are are usually taken during routine doctor's visits.
+It is of great importance to reduce these complications and with this project we aim to make a small contribution towards this goal. We will study patients' health data and explore which health factors play the leading roles in determining whether a patient falls into the low-, medium- or high-risk categories.
+We will also provide a machine-learning based tool to predict a patient's risk level from basic medical measurements, which are usually taken during routine prenatal care checkups.
 
 ## Dataset Content
 
