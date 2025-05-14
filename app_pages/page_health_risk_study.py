@@ -48,6 +48,9 @@ def page_health_risk_study_body():
                                 "Datatype": df.dtypes.to_list(),
                                 "Units": units_list
                                 })
+    # Need to convert dtypes to string
+    # Idea from https://tinyurl.com/3dcv98ms
+    df_units = df_units.astype(str)
 
     # Four most correlated variables
     # Copied from maternal health risk study A notebook

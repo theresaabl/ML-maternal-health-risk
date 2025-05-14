@@ -396,6 +396,7 @@ There are no remaining major differences between the local version when compared
 | [ChatGPT](https://chatgpt.com) | Help with debugging and explanations |
 | [Stackoverflow](https://stackoverflow.com/a/59839952) | Change label font size in seaborn plot |
 | [Stackoverflow](https://stackoverflow.com/a/72034697) | Change tick and label font size in plotly express plot |
+| [Discuss Streamlit](https://tinyurl.com/3dcv98ms) | Change dataframe containing dtypes as a column to dtype string |
 
 ### Acknowledgements
 
