@@ -217,7 +217,7 @@ User Stories:
 | [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end and front-end programming language. |
 | [![badge](https://img.shields.io/badge/Pandas-grey?logo=pandas&logoColor=150458)](https://pandas.pydata.org/) | Library for data structures and data analysis tools. |
 | [![badge](https://img.shields.io/badge/Numpy-grey?logo=numpy&logoColor=013243)](https://numpy.org/) | Library for scientific computing. |
-| [![badge](https://img.shields.io/badge/Scipy-grey?logo=numpy&logoColor=8CAAE6)](https://scipy.org/) | Library for fundamental algorithms for scientific computing in Python. |
+| [![badge](https://img.shields.io/badge/Scipy-grey?logo=scipy&logoColor=8CAAE6)](https://scipy.org/) | Library for fundamental algorithms for scientific computing in Python. |
 | [![badge](https://img.shields.io/badge/Ydata-Profiling-grey)](https://docs.profiling.ydata.ai/latest/) | Library for data profiling. |
 | [![badge](https://img.shields.io/badge/Matplotlib-grey)](https://matplotlib.org/) | Library for visualizations in Python. |
 | [![badge](https://img.shields.io/badge/Seaborn-grey)](https://seaborn.pydata.org/) | Library for statistical data visualizations. |

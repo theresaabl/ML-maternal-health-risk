@@ -7,6 +7,13 @@
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
+Further, I used [nbqa](https://pypi.org/project/nbqa/) with flake8 to validate all python code inside my Jupyter notebooks. To do this I followed the following steps:
+
+* Install nbqa with: `pip install nbqa`
+* Run in terminal: `nbqa flake8 your_notebook.ipynb`
+* Repeat the second step for each notebook and the errors and warnings will be displayed in the terminal
+* See the screenshots with empty terminal output, meaning no warnings or errors found
+
 | Directory | File | URL | Screenshot |
 | --- | --- | --- | --- |
 |  | [app.py](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/app.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/theresaabl/ML-maternal-health-risk/main/app.py) | ![screenshot](documentation/validation/python_app.png) |
@@ -20,6 +27,13 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | src/machine_learning | [create_plots.py](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/src/machine_learning/create_plots.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/theresaabl/ML-maternal-health-risk/main/src/machine_learning/create_plots.py) | ![screenshot](documentation/validation/python_create_plots.png) |
 | src/machine_learning | [evaluate_model.py](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/src/machine_learning/evaluate_model.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/theresaabl/ML-maternal-health-risk/main/src/machine_learning/evaluate_model.py) | ![screenshot](documentation/validation/python_evaluate_model.png) |
 | src/machine_learning | [predictive_analysis.py](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/src/machine_learning/predictive_analysis.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/theresaabl/ML-maternal-health-risk/main/src/machine_learning/predictive_analysis.py) | ![screenshot](documentation/validation/python_predictive_analysis.png) |
+| jupyter_notebooks | [01-DataCollection.ipynb](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/jupyter_notebooks/01-DataCollection.ipynb) | Run in terminal | ![screenshot](documentation/validation/notebook_data_collection.png) |
+| jupyter_notebooks | [02-MaternalHealthRiskStudyA.ipynb](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/jupyter_notebooks/02-MaternalHealthRiskStudyA.ipynb) | Run in terminal | ![screenshot](documentation/validation/notebook_maternal_health_risk_study_A.png) |
+| jupyter_notebooks | [03-MaternalHealthRiskStudyB.ipynb](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/jupyter_notebooks/03-MaternalHealthRiskStudyB.ipynb) | Run in terminal | ![screenshot](documentation/validation/notebook_maternal_health_risk_study_B.png) |
+| jupyter_notebooks | [04-DataCleaning.ipynb](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/jupyter_notebooks/04-DataCleaning.ipynb) | Run in terminal | ![screenshot](documentation/validation/notebook_data_cleaning.png) |
+| jupyter_notebooks | [05-FeatureEngineering.ipynb](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/jupyter_notebooks/05-FeatureEngineering.ipynb) | Run in terminal | ![screenshot](documentation/validation/notebook_feature_engineering.png) |
+| jupyter_notebooks | [06-ModellingAndEvaluation-ClassificationA.ipynb](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/jupyter_notebooks/06-ModellingAndEvaluation-ClassificationA.ipynb) | Run in terminal | ![screenshot](documentation/validation/notebook_modelling_and_evaluation_classification_A.png) |
+| jupyter_notebooks | [07-ModellingAndEvaluation-ClassificationB.ipynb](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/jupyter_notebooks/07-ModellingAndEvaluation-ClassificationB.ipynb) | Run in terminal | ![screenshot](documentation/validation/notebook_modelling_and_evaluation_classification_B.png) |
 
 ## Manual Testing
 
