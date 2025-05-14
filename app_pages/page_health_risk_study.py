@@ -41,7 +41,7 @@ def page_health_risk_study_body():
         "mmol/l",
         "degrees Celsius",
         "bpm",
-        ""
+        "low-, medium-, high-risk"
         ]
     df_units = pd.DataFrame(data={
                                 "Variable": df.columns.to_list(),

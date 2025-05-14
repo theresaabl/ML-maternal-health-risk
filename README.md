@@ -20,8 +20,11 @@ Improving maternal health during pregnancy and childbirth is part of the UN sust
 
 Maternal health is a public health aspect of global interest.
 There are many different complications that can occur during pregnancy and childbirth which can pose a risk on the mother as well as the baby.
-It is of great importance to reduce these complications and with this project we aim to make a small contribution towards this goal. We will study patients' health data and explore which health factors play the leading roles in determining whether a patient falls into the low-, medium- or high-risk categories.
-We will also provide a machine-learning based tool to predict a patient's risk level from basic medical measurements, which are usually taken during routine prenatal care checkups.
+It is of great importance to reduce these complications and with this project we aim to make a small contribution towards this goal.
+
+* We will study patients' health data and explore which health factors play the leading roles in determining whether a patient falls into the low-, medium- or high-risk categories.
+* We will also provide a machine-learning based tool to predict a patient's risk level from basic medical measurements, which are usually taken during routine prenatal care checkups.
+* This will be presented in a dashboard.
 
 ## Dataset Content
 
@@ -31,41 +34,101 @@ We use the Maternal Health Risk dataset from [UCI](https://archive.ics.uci.edu/d
 > UCI Machine Learning Repository [https://doi.org/10.24432/C5DP5D](https://doi.org/10.24432/C5DP5D).
 >
 
-This dataset contains medical data collected from different hospitals, community clinics and maternal health care centers from the rural areas of Bangladesh (see dataset metadata).
+* This dataset contains medical data collected from different hospitals, community clinics and maternal health care centers from the rural areas of Bangladesh (see dataset metadata).
+* The dataset has 1014 rows and 7 columns (note that the dataset presented on the streamlit dashboard has 1011 rows, where 3 erronous datapoints were already removed).
+* Each Row contains health data about one patient, the variables are:
 
-* Describe your dataset.
+| Variable | Information | Type | Units |
+| --- | --- | --- | --- |
+|Age | Patient's age | numerical | years |
+| SystolicBP | Patient's systolic blood pressure | numerical | mm Hg |
+| DiastolicBP | Patient's diastolic blood pressure | numerical | mm Hg |
+| BloodSugar | Patient's blood sugar level | numerical | mmol/l |
+| BodyTemp | Patient's body temperatur | numerical | degrees Celcius |
+| HeartRate | Patient's heart rate | numerical | bpm |
+| RiskLevel | Patient's maternal health risk level | categorical | ['low-risk', 'mid-risk', 'high-risk'] |
+
+* Where RiskLevel is the target that we want to predict
+* There are three classes: low-risk, mid-risk and high-risk
+  * Note: mid-risk and medium-risk are sometimes used interchangeably
 
 ## Business Requirements
 
-There are two business requirements agreed on with the stakeholders:
+A national health organisation has contacted us to study maternal health risk through a descriptive and predictive data analysis. The client provided the dataset.
 
-1. Improve understanding of maternal health risks during pregnancy:
-   * Identify key indicators associated with low, medium, and high risk.
-2. Provide a machine learning–based tool to predict maternal health risk levels for individual patients, supporting early intervention.
+There are **two business requirements** agreed on with the client:
 
-## Hypothesis and how to validate?
+* BR 1. Improve understanding of maternal health risks during pregnancy:
+  * Identify key indicators associated with low, medium, and high risk.
+* BR 2. Provide a machine learning–based tool to predict maternal health risk levels for individual patients, supporting early intervention.
+
+Further:
+
+* The clients goal is to use our results to develop new policies to improve pregnancy care and to support early interventions to mitigate health risks.
+* They plan to provide our predictive analytics tool to health care professionals and thus, facilitate maternal health risk assessement during prenatal care.
+* This could help risk assessement, e.g. in cases where:
+  * The health professionals do not have a lot of experience yet
+  * There is time pressure
+  * No experts are available and GPs need to do the assessement
+
+## Hypotheses and Validation
 
 We state the following three hypotheses:
 
-* We expect patients in the high risk category to have high blood pressure.
-* We expect patients in the high risk category to have high blood sugar.
-* We expect patients in the high risk category to be of higher age.
+  1. We expect that high-risk patients tend to have high blood sugar levels.
+  2. We expect that high-risk patients tend to have high systolic blood pressure levels.
+  3. We expect that high-risk patients tend to have high diastolic blood pressure levels.
+  4. We expect that high-risk patients tend to be of a higher age.
 
-We come to these expectations by looking at general information about pregnancy health risk factors, e.g. in the following articles:
+We come to these expectations by looking at literature about pregnancy health risk factors, e.g. in the following articles:
 
 * [National Library of Medicine (US)](https://www.ncbi.nlm.nih.gov/books/NBK555485/)
 * [Mayo Clinic](https://www.mayoclinic.org/healthy-lifestyle/pregnancy-week-by-week/in-depth/high-risk-pregnancy/art-20047012)
 * [MSD Manuals](https://www.msdmanuals.com/home/women-s-health-issues/complications-of-pregnancy/risk-factors-for-pregnancy-complications#Problems-in-a-Previous-Pregnancy_v809815)
 
-We look for information about the role of the health data present in our dataset on the maternal health risks during pregnancy. We find that hypertension (high blood pressure), diabetes (high blood sugar) and maternal age are mentioned as some of the leading risk factors. We look to validate these hypotheses through correlation studies.
+We find that hypertension (high blood pressure), diabetes (high blood sugar) and maternal age are mentioned as some of the leading risk factors. We look to validate these hypotheses through correlation studies and find out in more detail which of these factors play they largest roles.
 
 ### Validation
 
 Indeed in the correlation study we find that blood sugar, blood pressure (systolic and diastolic) and age are the most correlated variables to the health risk level.
 
-## The rationale to map the business requirements to the Data Visualizations and ML tasks
+Our correlation study supports all three hypotheses:
 
-* List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
+* From the correlation levels of the variables with the health risk level, we conclude that:
+
+1. High-risk patients tend to have high blood sugar levels.
+2. High-risk patients tend to have high systolic and diastolic blood pressure levels, where the two are correlated between themselves.
+3. High-risk patients tend to be of a higher age.
+
+This is illustrated in the following Spearman correlation heatmap and predictive power score (pps) heatmap:
+
+![Spearman Correlation Heatmap](documentation/plots/correlation_spearman_heatmap.png "Spearman Correlation Heatmap")![PPS Heatmap](documentation/plots/pps_heatmap.png "PPS Heatmap")
+
+## Mapping Business Requirements to Data Visualizations and ML Tasks
+
+Business requirements:
+
+* BR 1. Improve understanding of maternal health risks during pregnancy:
+  * Identify key indicators associated with low, medium, and high risk.
+* BR 2. Provide a machine learning–based tool to predict maternal health risk levels for individual patients, supporting early intervention.
+
+Data Visualizations and ML Tasks:
+
+* BR 1:
+  * Perform a correlation study of the features with the target variable to analyse which medical measurements are most correlated to the health risk level.
+  * Use heatmaps to display the correlation levels and predictive power.
+  * Display the distributions of the variables per health risk level to visualize the relationship.
+  * Visualize the relationships in an interactive parallel plot that shows the relationships between all variables and the target.
+  
+* BR 2:
+  * We will predict the health risk level of a given patient &rarr; multiclass Classification.
+  * Perform data cleaning and feature engineering on the dataset to best prepare it for the predictive analysis.
+  * Put the steps into a data cleaning and feature engineering pipeline.
+  * The machine-learning tool will be a Classification - perform and extensive algorithm and hyperparameter search to find the best model for predictions on live data.
+  * Balance performance and generalizability to find a model that has good recall and precision and also has a small train-test-gap (performance on test set is similar enough to train set).
+  * Visualize the most important features.
+  * Visualize the model performance with the help of confusion matrices.
+  * Provide a live tool for predictions with user input data.
 
 ## ML Business Case
 
