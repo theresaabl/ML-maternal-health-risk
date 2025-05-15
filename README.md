@@ -230,28 +230,28 @@ In this section we describe the design of the project dashboard including the pa
 
 | Page | Section | Content | Screenshot |
 | --- | --- | --- | --- |
-| All Pages | Menu | | ![screenshot](documentation/dashboard/menu.png) |
-| Project Summary Page | Project summary | | ![screenshot](documentation/dashboard/project_summary.png) |
-| Project Summary Page | Dataset summary | | ![screenshot](documentation/dashboard/dataset_summary.png) |
-| Project Summary Page | Link to documentation | | ![screenshot](documentation/dashboard/readme_link.png) |
-| Project Summary Page | Business requirements | | ![screenshot](documentation/dashboard/business_requirements.png) |
-| Maternal Health Risk Study Page | Maternal Health Risk Study Summary | | ![screenshot](documentation/dashboard/maternal_health_risk_study_summary.png) |
-| Maternal Health Risk Study Page | Checkboxes to display and hide different sections | | ![screenshot](documentation/dashboard/checkboxes.png) |
-| Maternal Health Risk Study Page | Inspect Maternal Health Risk Dataset | | ![screenshot](documentation/dashboard/inspect_dataset.png) |
-| Maternal Health Risk Study Page | Correlation Study Results | | ![screenshot](documentation/dashboard/correlation_study_results.png) |
-| Maternal Health Risk Study Page | Correlation and PPS Heatmaps | | ![screenshot](documentation/dashboard/correlation_heatmaps.png) |
-| Maternal Health Risk Study Page | Variable Distributions by Health Risk Level | | ![screenshot](documentation/dashboard/correlation_distributions.png) |
-| Maternal Health Risk Study Page | Parallel Plot to Visualize Variable Relationships | | ![screenshot](documentation/dashboard/correlation_parallel_plot.png) |
-| Project Hypotheses and Validation Page | Project Hypotheses and Validation | | ![screenshot](documentation/dashboard/hypotheses_validation.png) |
-| Predict Health Risk Levels Page | Predict Health Risk Levels Prediction Tool | | ![screenshot](documentation/dashboard/predict_risk_level.png) |
-| Predict Health Risk Levels Page | Prediction for Low Risk | | ![screenshot](documentation/dashboard/prediction_low_risk.png) |
-| Predict Health Risk Levels Page | Prediction for Medium Risk | | ![screenshot](documentation/dashboard/prediction_mid_risk.png) |
-| Predict Health Risk Levels Page | Prediction for High Risk | | ![screenshot](documentation/dashboard/prediction_high_risk.png) |
-| ML: Model and Evaluation | Model and Evaluation Summary | | ![screenshot](documentation/dashboard/model_evaluation_summary.png) |
-| ML: Model and Evaluation | ML Pipelines | | ![screenshot](documentation/dashboard/ml_pipelines.png) |
-| ML: Model and Evaluation | Features | | ![screenshot](documentation/dashboard/features.png) |
-| ML: Model and Evaluation | Pipeline Performance | | ![screenshot](documentation/dashboard/performance.png) |
-| ML: Model and Evaluation | Visualization | | ![screenshot](documentation/dashboard/confusion_matrix.png) |
+| All Pages | Menu | Radio button menu to navigate the app | ![screenshot](documentation/dashboard/menu.png) |
+| Project Summary Page | Project summary | Summary of the project topic and introduction to project goals | ![screenshot](documentation/dashboard/project_summary.png) |
+| Project Summary Page | Dataset summary | Summary of the dataset content and cite dataset source | ![screenshot](documentation/dashboard/dataset_summary.png) |
+| Project Summary Page | Link to documentation | Link to the full documentation here | ![screenshot](documentation/dashboard/readme_link.png) |
+| Project Summary Page | Business requirements | The business requirements agreed on with the client | ![screenshot](documentation/dashboard/business_requirements.png) |
+| Maternal Health Risk Study Page | Maternal Health Risk Study Summary | A summary of this page describing that it answers business requirement 1 | ![screenshot](documentation/dashboard/maternal_health_risk_study_summary.png) |
+| Maternal Health Risk Study Page | Checkboxes to display and hide different sections | The seperate sections of this page are collapsed and can be displayed by clicking the respective checkbox | ![screenshot](documentation/dashboard/checkboxes.png) |
+| Maternal Health Risk Study Page | Inspect Maternal Health Risk Dataset | Show a sample of the dataset, state size of dataset and give information about the variables | ![screenshot](documentation/dashboard/inspect_dataset.png) |
+| Maternal Health Risk Study Page | Correlation Study Results | Present the results of the correlation study and state which variables are most correlated to the target | ![screenshot](documentation/dashboard/correlation_study_results.png) |
+| Maternal Health Risk Study Page | Correlation and PPS Heatmaps | Visualize the correlation study with heatmaps (Spearman correlation and predictive power score (pps)) | ![screenshot](documentation/dashboard/correlation_heatmaps.png) |
+| Maternal Health Risk Study Page | Variable Distributions by Health Risk Level | Present a plot of the variable distributions by health risk level to visualize the most correlated variables and their relationships to the health risk level further | ![screenshot](documentation/dashboard/correlation_distributions.png) |
+| Maternal Health Risk Study Page | Parallel Plot to Visualize Variable Relationships | An interactive and expandable parallel plot that shows the relationships between the most correlated variables with the health risk level and between themselves | ![screenshot](documentation/dashboard/correlation_parallel_plot.png) |
+| Project Hypotheses and Validation Page | Project Hypotheses and Validation | Present the project hypotheses, if they were validated and how they were validated | ![screenshot](documentation/dashboard/hypotheses_validation.png) |
+| Predict Health Risk Levels Page | Predict Health Risk Levels Prediction Tool | This page answers business requirement 2 and provides a ML tool to classify patients into low-, medium- and high-risk categories based on user input medical measurements. | ![screenshot](documentation/dashboard/predict_risk_level.png) |
+| Predict Health Risk Levels Page | Prediction for Low Risk | Example for a low-risk prediction, which is emphasized with the background color of the prediction result display. Further, a table with probabilities for each of the risk classes is presented for better interpretability of the results, especially for edge cases. | ![screenshot](documentation/dashboard/prediction_low_risk.png) |
+| Predict Health Risk Levels Page | Prediction for Medium Risk | Example for a medium-risk prediction. | ![screenshot](documentation/dashboard/prediction_mid_risk.png) |
+| Predict Health Risk Levels Page | Prediction for High Risk | Example for a high-risk prediction. | ![screenshot](documentation/dashboard/prediction_high_risk.png) |
+| ML: Model and Evaluation | Model and Evaluation Summary | Summary of model performance requirements and actual model performance results | ![screenshot](documentation/dashboard/model_evaluation_summary.png) |
+| ML: Model and Evaluation | ML Pipelines | Present the feature engineering and model pipeline, showing the steps and hyperparameters | ![screenshot](documentation/dashboard/ml_pipelines.png) |
+| ML: Model and Evaluation | Features | Present the most important features and their relative importance | ![screenshot](documentation/dashboard/features.png) |
+| ML: Model and Evaluation | Pipeline Performance | Present a more detailed pipeline performance report, including classification reports and confusion matrices for the train and the test set | ![screenshot](documentation/dashboard/performance.png) |
+| ML: Model and Evaluation | Visualization | Visualize the train and test set confusion matrices | ![screenshot](documentation/dashboard/confusion_matrix.png) |
 
 ## User Stories
 
