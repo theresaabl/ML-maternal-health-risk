@@ -236,7 +236,7 @@ In this section we describe the design of the project dashboard including the pa
 | Project Summary Page | Link to documentation | Link to the full documentation here | ![screenshot](documentation/dashboard/readme_link.png) |
 | Project Summary Page | Business requirements | The business requirements agreed on with the client | ![screenshot](documentation/dashboard/business_requirements.png) |
 | Maternal Health Risk Study Page | Maternal Health Risk Study Summary | A summary of this page describing that it answers business requirement 1 | ![screenshot](documentation/dashboard/maternal_health_risk_study_summary.png) |
-| Maternal Health Risk Study Page | Checkboxes to display and hide different sections | The seperate sections of this page are collapsed and can be displayed by clicking the respective checkbox | ![screenshot](documentation/dashboard/checkboxes.png) |
+| Maternal Health Risk Study Page | Checkboxes to display and hide different sections | The seperate sections of this page are collapsed and can be displayed by clicking the respective checkbox. This makes the page interactive to avoid information overload. | ![screenshot](documentation/dashboard/study_checkboxes.png) |
 | Maternal Health Risk Study Page | Inspect Maternal Health Risk Dataset | Show a sample of the dataset, state size of dataset and give information about the variables | ![screenshot](documentation/dashboard/inspect_dataset.png) |
 | Maternal Health Risk Study Page | Correlation Study Results | Present the results of the correlation study and state which variables are most correlated to the target | ![screenshot](documentation/dashboard/correlation_study_results.png) |
 | Maternal Health Risk Study Page | Correlation and PPS Heatmaps | Visualize the correlation study with heatmaps (Spearman correlation and predictive power score (pps)) | ![screenshot](documentation/dashboard/correlation_heatmaps.png) |
@@ -248,6 +248,7 @@ In this section we describe the design of the project dashboard including the pa
 | Predict Health Risk Levels Page | Prediction for Medium Risk | Example for a medium-risk prediction. | ![screenshot](documentation/dashboard/prediction_mid_risk.png) |
 | Predict Health Risk Levels Page | Prediction for High Risk | Example for a high-risk prediction. | ![screenshot](documentation/dashboard/prediction_high_risk.png) |
 | ML: Model and Evaluation | Model and Evaluation Summary | Summary of model performance requirements and actual model performance results | ![screenshot](documentation/dashboard/model_evaluation_summary.png) |
+| ML: Model and Evaluation | Checkboxes to display and hide different sections | The seperate sections of this page are collapsed and can be displayed by clicking the respective checkbox. This makes the page interactive to avoid information overload. | ![screenshot](documentation/dashboard/evaluation_checkboxes.png) |
 | ML: Model and Evaluation | ML Pipelines | Present the feature engineering and model pipeline, showing the steps and hyperparameters | ![screenshot](documentation/dashboard/ml_pipelines.png) |
 | ML: Model and Evaluation | Features | Present the most important features and their relative importance | ![screenshot](documentation/dashboard/features.png) |
 | ML: Model and Evaluation | Pipeline Performance | Present a more detailed pipeline performance report, including classification reports and confusion matrices for the train and the test set | ![screenshot](documentation/dashboard/performance.png) |
@@ -310,7 +311,6 @@ There are many ways in which one could improve or extend this project. Some idea
 | [![badge](https://img.shields.io/badge/Streamlit-grey?logo=streamlit&logoColor=FF4B4B)](https://streamlit.io/) | App framework to create front-end. |
 | [![badge](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) | Hosting the deployed back-end site. |
 | [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, and explain things. |
-| [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end and front-end programming language. |
 
 ## Testing
 
