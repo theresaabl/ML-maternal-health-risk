@@ -214,17 +214,42 @@ See [User Stories Section](#user-stories) below.
 
 We split our project into epics and user stories.
 
-Epics:
-
-* Information gathering and data collection
-* Data visualization, cleaning, and preparation
-* Model training, validation, and optimization
-* Dashboard planning, designing, and development
-* Dashboard deployment and release
-
 ### EPIC: Data Collection
 
-* As a **data analyst**
+* As a **data practitioner**, I can import the maternal health dataset into my notebook and save it to a local folder so that I can load it to analyse and process it.
+
+### Epic: Exploratory Data Analysis and Data Visualization
+
+* As a **data practitioner**, I can inspect the dataset so that I can see whether there are any missing values.
+* As a **data practitioner**, I can visualize the distributions of the variables so that I can better understand the data.
+* As a **data practitioner**, I can analyse whether there are any outliers in the data so that I can decide how to handle eventual outliers.
+* As a **data practitioner**, I can perform a correlation study so that I can understand how much each of the variables is correlated to the target and with the other variables.
+* As a **data practitioner**, I can create different plots (heatmaps, distributions per target class, parallel plot) so that I can visualize the relationships between the variables and the target.
+
+### Epic: Data Cleaning and Preparation
+
+* As a **data practitioner**, I can remove outliers that seem to be erronous datapoints so that I get a dataset free from wrong entries.
+* As a **data practitioner**, I can study different possible transformations that could make the variables more normally distributed so that I can decide which transformation steps to take in the feature engineering pipeline.
+* As a **data practitioner**, I can study the target balance of the dataset so that I can decide whether to perform sample rebalancing.
+
+### Epic: Model Training, Validation and Optimization
+
+* As a **data practitioner**, I can split my data into train and test set so that I can use it to fit the pipelines to.
+* As a **data practitioner**, I can define a feature engineering pipeline and fit and transform the dataset accordingly so that I can prepare the data for the model pipeline.
+* As a **data practitioner**, I can perform an grid search with different Classifier models so that I can find the best model for my data.
+* As a **data practitioner**, I can perform an extensive hyperparameter optimization search so that I can find the best hyperparameters to get the best performance while keeping good generalizability (small train-test-gap).
+* As a **data practitioner**, I can train the best model with the best hyperparameters and fit it with all features so that I can validate it and find the best features used to train the model.
+* As a **data practitioner**, I can refit the feature engineering and model pipelines using only the best features found in the previous point so that I can define an optimized pipeline.
+* As a **data practitioner**, I can evaluate the pipeline so that I can check whether the performance metrics meet the criteria set in the [ML Business Case](#ml-business-case).
+
+### Epic: Dashboard planning, designing and development
+
+* As a **data practitioner**, I can (display results)
+* As a **client**, I can (see results)
+* As a **client**, I can (use predictor)
+* ....
+
+### Epic: Dashboard deployment and release
 
 ## Dashboard Design
 
@@ -271,29 +296,20 @@ There are many ways in which one could improve or extend this project. Some idea
 
 ## CRISP-DM
 
-CRoss Industry Standard Process for Data Mining
+We followed CRISP-DM (CRoss Industry Standard Process for Data Mining) while developing this project:
 
-### Business Understanding
-
-See above
-
-### Data Understanding
-
-### Data Preparation
-
-#### Data Cleaning
-
-#### Sample Rebalancing
-
-#### Feature Engineering
-
-### Modeling
-
-#### Model and Hyperparameter Search
-
-#### Important Features
-
-### Evaluation
+| CRISP-DM Step | File | Notes | Results | Plots |
+| --- | --- | --- | --- | --- |
+| **Business Understanding** |  |  |  |  |
+| **Data Understanding** |  |  |  |  |
+| **Data Preparation** |  |  |  |  |
+| **Data Preparation** - Data Cleaning |  |  |  |  |
+| **Data Preparation** - Sample Rebalancing |  |  |  |  |
+| **Data Preparation** - Feature Engineering |  |  |  |  |
+| **Modeling** - Model and Hyperparameter Search |  |  |  |  |
+| **Modeling** - Important Features|  |  |  |  |
+| **Evaluation** |  |  |  |  |
+| **Deployment** |  |  |  |  |
 
 Notes:
 Model without winsorizer:
@@ -316,10 +332,6 @@ Final model with winsorizer:
   * low-risk-precision train: 89%
   * low-risk-precision test: 81%
   * low-risk-precision gap: 8 percentage points
-
-### Deployment
-
-see below
 
 ## Main Data Analysis and Machine Learning Libraries
 
