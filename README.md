@@ -244,12 +244,20 @@ We split our project into epics and user stories.
 
 ### Epic: Dashboard planning, designing and development
 
-* As a **data practitioner**, I can (display results)
-* As a **client**, I can (see results)
-* As a **client**, I can (use predictor)
-* ....
+* As a **data practitioner**, I can display the results of my analysis so that I can share them with the client.
+* As a **data practitioner**, I can provide the ML predition tool so that I can share it with the client.
+* As a **client**, I can see a project summary including a dataset summary and the business requirements so that I can know what this project is about.
+* As a **client**, I can inspect the dataset so that I can see what data was used for the analysis.
+* As a **client**, I can see the results of the correlation study so that I can better understand which varialbes are most correlated to the health risk level.
+* As a **client**, I can see visualizations of the correlation study so that I can better understand the relationships between the variables.
+* As a **client**, I can see the project hypotheses and validation so that I can see at first sight what the results of the analysis are.
+* As a **client**, I can access the ML Classification tool so that I can make predictions on the health risk of real patients by inputting a few health measurements.
+* As a **client**, I can see information about the model and its evaluation so that I can better understand the performance of the model and the reliability of the predictions.
 
 ### Epic: Dashboard deployment and release
+
+* As a **data practitioner**, I can present my results and provide my ML tool on a live site so that I can provide them to the client.
+* As a **client**, I can access the dashboard including the ML tool on a live site so that I can use the results and the tool.
 
 ## Dashboard Design
 

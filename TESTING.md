@@ -35,25 +35,39 @@ Further, I used [nbqa](https://pypi.org/project/nbqa/) with flake8 to validate a
 | jupyter_notebooks | [06-ModellingAndEvaluation-ClassificationA.ipynb](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/jupyter_notebooks/06-ModellingAndEvaluation-ClassificationA.ipynb) | Run in terminal | ![screenshot](documentation/validation/notebook_modelling_and_evaluation_classification_A.png) |
 | jupyter_notebooks | [07-ModellingAndEvaluation-ClassificationB.ipynb](https://github.com/theresaabl/ML-maternal-health-risk/blob/main/jupyter_notebooks/07-ModellingAndEvaluation-ClassificationB.ipynb) | Run in terminal | ![screenshot](documentation/validation/notebook_modelling_and_evaluation_classification_B.png) |
 
-## Manual Testing
-
-Examples:
-
-| Feature | Expectation | Test | Result | Screenshot |
-| --- | --- | --- | --- | --- |
-| Register | Feature is expected to allow users to sign up for an account, once the user signs up the account is set to inactive and the account inactive page is shown. | Signed up as a new user, entering valid user data. | Account was created successfully, a message was shown and the account inactive page was displayed. | ![screenshot](documentation/features/signup.png)![screenshot](documentation/features/account-inactive.png) |
-|  | Feature is expected to show a warning when user enters invalid data or fields are left empty. | Signed up as a new user, entering invalid user data or leaving fields empty. | Warning was shown inside the form. | (This is handled by allauth) |
-| Login | Feature is expected to allow registered users with active accounts to sign in and access the resident dashboard. | Signed in with an active user account. | The resident space page was displayed. | ![screenshot](documentation/features/signin-message.png)![screenshot](documentation/features/dashboard.png) |
-
 ## User Story Testing
 
 Examples:
 
-| Target | Expectation | Outcome | Screenshot |
+| Target | Expectation | Outcome | Jupyter Notebook or Dashboard Screenshot |
 | --- | --- | --- | --- |
-| As a Site User |  I can sign up for an account | so that I can request to get access to a resident dashboard. | ![screenshot](documentation/features/signup.png) |
-| As a Site User | I can see a message when login does not work (yet) | so that I can know whether my account has been approved yet or not. | ![screenshot](documentation/features/account-inactive.png) |
-| As a Site User | I can see the home page | so that I know what this site is about. | ![screenshot](documentation/features/home-lenovo.png) |
+| As a data practitioner | I can import the maternal health dataset into my notebook and save it to a local folder | so that I can load it to analyse and process it |  |
+| As a data practitioner | I can inspect the dataset | so that I can see whether there are any missing values |  |
+| As a data practitioner | I can visualize the distributions of the variables | so that I can better understand the data |  |
+| As a data practitioner | I can analyse whether there are any outliers in the data | so that I can decide how to handle eventual outliers |  |
+| As a data practitioner | I can perform a correlation study | so that I can understand how much each of the variables is correlated to the target and with the other variables |  |
+| As a data practitioner | I can create different plots (heatmaps, distributions per target class, parallel plot) | so that I can visualize the relationships between the variables and the target |  |
+| As a data practitioner | I can remove outliers that seem to be erronous datapoints | so that I get a dataset free from wrong entries |  |
+| As a data practitioner | I can study different possible transformations that could make the variables more normally distributed | so that I can decide which transformation steps to take in the feature engineering pipeline |  |
+| As a data practitioner | I can study the target balance of the dataset | so that I can decide whether to perform sample rebalancing |  |
+| As a data practitioner | I can split my data into train and test set | so that I can use it to fit the pipelines to |  |
+| As a data practitioner | I can define a feature engineering pipeline and fit and transform the dataset accordingly | so that I can prepare the data for the model pipeline |  |
+| As a data practitioner | I can perform an grid search with different Classifier models | so that I can find the best model for my data |  |
+| As a data practitioner | I can perform an extensive hyperparameter optimization search | so that I can find the best hyperparameters to get the best performance while keeping good generalizability (small train-test-gap) |  |
+| As a data practitioner | I can train the best model with the best hyperparameters and fit it with all features | so that I can validate it and find the best features used to train the model |  |
+| As a data practitioner | I can refit the feature engineering and model pipelines using only the best features found in the previous point | so that I can define an optimized pipeline |  |
+| As a data practitioner | I can evaluate the pipeline | so that I can check whether the performance metrics meet the criteria set in the ML Business Case |  |
+| As a data practitioner | I can display the results of my analysis | so that I can share them with the client |  |
+| As a data practitioner | I can provide the ML predition tool | so that I can share it with the client |  |
+| As a client | I can see a project summary including a dataset summary and the business requirements | so that I can know what this project is about |  |
+| As a client | I can inspect the dataset | so that I can see what data was used for the analysis |  |
+| As a client | I can see the results of the correlation study | so that I can better understand which varialbes are most correlated to the health risk level |  |
+| As a client | I can see visualizations of the correlation study | so that I can better understand the relationships between the variables |  |
+| As a client | I can see the project hypotheses and validation | so that I can see at first sight what the results of the analysis are |  |
+| As a client | I can access the ML Classification tool | so that I can make predictions on the health risk of real patients by inputting a few health measurements |  |
+| As a client | I can see information about the model and its evaluation | so that I can better understand the performance of the model and the reliability of the predictions |  |
+| As a data practitioner | I can present my results and provide my ML tool on a live site | so that I can provide them to the client |  |
+| As a client | I can access the dashboard including the ML tool on a live site | so that I can use the results and the tool |  |
 
 ## Bugs
 
