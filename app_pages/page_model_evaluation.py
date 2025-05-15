@@ -58,6 +58,21 @@ def page_model_evaluation_body():
             )
     st.write("---")
 
+    # Show Train and Test Set Frequencies
+    if st.checkbox("### Train and Test Set"):
+        st.info(
+            "The dataset was split into train and test sets with the "
+            "following frequencies:"
+            )
+
+        st.markdown(
+            "| | Train Set Features | Train Set Target | Test Set Features | Test Set Target |\n"  # noqa
+            "| --- | --- | --- | --- | --- |\n"
+            f"| Rows | {X_train.shape[0]} | {y_train.shape[0]} | {X_test.shape[0]} | {y_test.shape[0]} |\n"  # noqa
+            f"| Columns | {X_train.shape[1]} | {y_train.shape[1]} | {X_test.shape[1]} | {y_test.shape[1]} |"  # noqa
+            )
+        st.write("---")
+
     # Show pipelines
     if st.checkbox("### ML Pipelines"):
         st.info("There are 2 ML Pipelines arranged in series.")
@@ -65,17 +80,20 @@ def page_model_evaluation_body():
         st.write(" * The first is responsible for feature engineering:")
         st.write(pipeline_feat_eng)
 
-        st.write("* The second is responsible for feature scaling and modelling:")
+        st.write(
+            "* The second is responsible for feature scaling and modelling:"
+            )
         st.write(pipeline_model)
 
         st.success(
-            "The optimised model is a Random Forest Classifier with max depth 10."
-            )
+                "The optimised model is a Random Forest Classifier with "
+                "max depth 10."
+                )
         st.write("---")
 
     # Show feature importance plot
-    if st.checkbox("### Features"):
-    # get features list:
+    if st.checkbox("### Important Features"):
+        # get features list:
         feat_list = X_train.columns.to_list()
         st.info(
             "The model was trained on the following features (in order of "
@@ -89,8 +107,8 @@ def page_model_evaluation_body():
     # Evaluate performance on train and test set
     if st.checkbox("### Pipeline Performance"):
         st.info("A report of performance metrics for the train and test sets:")
-        # Don't need to apply feature engineering pipeline since the train and test
-        # set was already transformed in the jupyter notebooks
+        # Don't need to apply feature engineering pipeline since the train
+        # and test set was already transformed in the jupyter notebooks
         performance(
             X_train=X_train,
             y_train=y_train,

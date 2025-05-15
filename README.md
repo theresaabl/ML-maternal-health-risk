@@ -249,8 +249,9 @@ In this section we describe the design of the project dashboard including the pa
 | Predict Health Risk Levels Page | Prediction for High Risk | Example for a high-risk prediction. | ![screenshot](documentation/dashboard/prediction_high_risk.png) |
 | ML: Model and Evaluation | Model and Evaluation Summary | Summary of model performance requirements and actual model performance results | ![screenshot](documentation/dashboard/model_evaluation_summary.png) |
 | ML: Model and Evaluation | Checkboxes to display and hide different sections | The seperate sections of this page are collapsed and can be displayed by clicking the respective checkbox. This makes the page interactive to avoid information overload. | ![screenshot](documentation/dashboard/evaluation_checkboxes.png) |
+| ML: Model and Evaluation | Train and Test Set | Displays the train and test set frequencies | ![screenshot](documentation/dashboard/train_test_set.png) |
 | ML: Model and Evaluation | ML Pipelines | Present the feature engineering and model pipeline, showing the steps and hyperparameters | ![screenshot](documentation/dashboard/ml_pipelines.png) |
-| ML: Model and Evaluation | Features | Present the most important features and their relative importance | ![screenshot](documentation/dashboard/features.png) |
+| ML: Model and Evaluation | Important Features | Present the most important features and their relative importance | ![screenshot](documentation/dashboard/features.png) |
 | ML: Model and Evaluation | Pipeline Performance | Present a more detailed pipeline performance report, including classification reports and confusion matrices for the train and the test set | ![screenshot](documentation/dashboard/performance.png) |
 | ML: Model and Evaluation | Visualization | Visualize the train and test set confusion matrices | ![screenshot](documentation/dashboard/confusion_matrix.png) |
 
