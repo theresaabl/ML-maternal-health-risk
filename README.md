@@ -229,21 +229,6 @@ Final model with winsorizer:
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
 * Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
 
-## Deployment
-
-### Heroku
-
-* The App live link is: [Live Site](https://YOUR_APP_NAME.herokuapp.com/)
-* Set the runtime.txt Python version to a [Heroku-24](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
-
 ## Main Data Analysis and Machine Learning Libraries
 
 * Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
@@ -299,39 +284,54 @@ User Stories:
 
 ## Deployment
 
-The live deployed application can be found deployed on [Heroku](https://shared-spaces-f588831ae867.herokuapp.com).
+The live application can be found deployed on [Heroku](https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/).
 
 ### Heroku Deployment
-
-Example:
 
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
 Deployment steps are as follows, after account setup:
 
-- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
-- Your app name must be unique, and then choose a region closest to you (EU or USA), then finally, click **Create App**.
-- From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables to match your private `env.py` file.
+* Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+* Your app name must be unique, and then choose a region closest to you (EU or USA), then finally, click **Create App**.
 
 Heroku needs some additional files in order to deploy properly.
 
-- [requirements.txt](requirements.txt)
-- [Procfile](Procfile)
+* [requirements.txt](requirements.txt)
+* [Procfile](Procfile)
+* [setup.sh](setup.sh)
 
 You can install this project's **[requirements.txt](requirements.txt)** (*where applicable*) using:
 
-- `pip3 install -r requirements.txt`
+* `pip3 install -r requirements.txt`
 
 If you have your own packages that have been installed, then the requirements file needs updated using:
 
-- `pip3 freeze --local > requirements.txt`
+* `pip3 freeze --local > requirements.txt`
+* Note to only add packages needed for the live app, not those only used in jupyter notebooks.
 
 The **[Procfile](Procfile)** can be created with the following command:
 
-- `echo web: gunicorn app_name.wsgi > Procfile`
-- *replace `app_name` with the name of your primary Django app name; the folder where `settings.py` is located*
+* `echo web: sh setup.sh && streamlit run app.py > Procfile`
+
+The **[setup.sh](setup.sh)** file needs to look like:
+
+```python
+mkdir -p ~/.streamlit/
+echo "\
+[server]\n\
+headless = true\n\
+port = $PORT\n\
+enableCORS = false\n\
+\n\
+" > ~/.streamlit/config.toml
+
+```
 
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+
+* At the Deploy tab, select GitHub as the deployment method.
+* Select your repository name and click Search. Once it is found, click Connect.
 
 Either (*recommended*):
 
@@ -342,9 +342,14 @@ Or:
 * In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
 * Set the remote for Heroku: `heroku git:remote -a app_name` (*replace `app_name` with your app name*)
 * After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
-	* `git push heroku main`
+* `git push heroku main`
 
 The project should now be connected and deployed to Heroku!
+
+If the slug size is too large then:
+
+* Add large files not required for the app to the .slugignore file.
+* Only add packages to requirements.txt that are needed in the live app, not those only used in jupyter notebooks (some ML packages can be very large).
 
 ### Local Development
 
@@ -354,8 +359,6 @@ For either method, you will need to install any applicable packages found within
 
 * `pip3 install -r requirements.txt`.
 
-You will need to create a new file called `env.py` at the root-level, and include the same environment variables listed above from the Heroku deployment steps.
-
 > [!IMPORTANT]
 > This is a sample only; you would replace the values with your own if cloning/forking my repository.
 
@@ -363,20 +366,20 @@ You will need to create a new file called `env.py` at the root-level, and includ
 
 You can clone the repository by following these steps:
 
-1. Go to the [GitHub repository](https://www.github.com/theresaabl/shared-spaces).
+1. Go to the [GitHub repository](https://www.github.com/theresaabl/ML-maternal-health-risk).
 2. Locate and click on the green "Code" button at the very top, above the commits and files.
 3. Select whether you prefer to clone using "HTTPS", "SSH", or "GitHub CLI", and click the "copy" button to copy the URL to your clipboard.
 4. Open "Git Bash" or "Terminal".
 5. Change the current working directory to the location where you want the cloned directory.
 6. In your IDE Terminal, type the following command to clone the repository:
-	* `git clone https://www.github.com/theresaabl/shared-spaces.git`
+	* `git clone https://www.github.com/theresaabl/ML-maternal-health-risk.git`
 7. Press "Enter" to create your local clone.
 
 #### Forking
 
 By forking the GitHub Repository, you make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
 
-1. Log in to GitHub and locate the [GitHub Repository](https://www.github.com/theresaabl/shared-spaces).
+1. Log in to GitHub and locate the [GitHub Repository](https://www.github.com/theresaabl/ML-maternal-health-risk).
 2. At the top of the Repository, just below the "Settings" button on the menu, locate and click the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
