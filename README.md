@@ -229,10 +229,6 @@ Final model with winsorizer:
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
 * Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
 
-## Main Data Analysis and Machine Learning Libraries
-
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
-
 ## User Stories
 
 Examples:
@@ -248,21 +244,22 @@ User Stories:
 * As a Confirmed Resident I can login and logout of my account so that I can access a resident dashboard.
 * As a Site User I can see a message when login does not work (yet) so that I can know whether my account has been approved yet or not.
 
-## Conclusions and Future Directions
+## Possible Future Directions
 
-## Tools, Technologies and Python Libraries
+There are many ways in which one could improve or extend this project. Some ideas are:
 
-| Tool / Tech | Use |
+* Develop an API to embed the maternal health risk prediction tool into websites directly:
+  * This could be useful for medical prefessionals, so they could use the predictor on their own websites and platforms
+* Collect more data:
+  * A larger dataset would help improve the analyses and predictions
+  * More details about the measurements would be very helpful in improving the analysis and decision making (e.g. age values, blood sugar measurements)
+* It would be very interesting to also study this data with a clustering model to study whether the algorithm finds similar clusters as the health risk labels or if it finds additional structure within the data.
+* An even more extensive hyperparameter optimization together with a larger dataset and more feature engineering (when having more information about the health measurement details) could help improve the prediction performance.
+
+## Main Data Analysis and Machine Learning Libraries
+
+| Libraries | Use |
 | --- | --- |
-| [![badge](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://markdown.2bn.dev) | Generate README and TESTING templates. |
-| [![badge](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) | Version control. (`git add`, `git commit`, `git push`) |
-| [![badge](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) | Secure online code storage and Codespaces as cloud IDE for development. |
-| [![badge](https://img.shields.io/badge/Jupyter-grey?logo=jupyter&logoColor=F37626)](https://jupyter.org/) | Descriptive and predictive data analysis and documentation for the back-end. |
-| [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end and front-end programming language. |
-| [![badge](https://img.shields.io/badge/Streamlit-grey?logo=streamlit&logoColor=FF4B4B)](https://streamlit.io/) | App framework to create front-end. |
-| [![badge](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) | Hosting the deployed back-end site. |
-| [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, and explain things. |
-| [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end and front-end programming language. |
 | [![badge](https://img.shields.io/badge/Pandas-grey?logo=pandas&logoColor=150458)](https://pandas.pydata.org/) | Library for data structures and data analysis tools. |
 | [![badge](https://img.shields.io/badge/Numpy-grey?logo=numpy&logoColor=013243)](https://numpy.org/) | Library for scientific computing. |
 | [![badge](https://img.shields.io/badge/Scipy-grey?logo=scipy&logoColor=8CAAE6)](https://scipy.org/) | Library for fundamental algorithms for scientific computing in Python. |
@@ -276,6 +273,20 @@ User Stories:
 | [![badge](https://img.shields.io/badge/XGBoost-grey)](https://xgboost.readthedocs.io/en/release_3.0.0/) |  Library for optimized distributed gradient boosting. |
 | [![badge](https://img.shields.io/badge/Imbalanced-Learn-grey)](https://imbalanced-learn.org/stable/) |  Library for classification with imbalanced classes. |
 | [![badge](https://img.shields.io/badge/Joblib-grey)](https://joblib.readthedocs.io/en/stable/) |  Library for lightweight pipelining in Python. |
+
+## Tools and Technologies
+
+| Tool / Tech | Use |
+| --- | --- |
+| [![badge](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://markdown.2bn.dev) | Generate README and TESTING templates. |
+| [![badge](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) | Version control. (`git add`, `git commit`, `git push`) |
+| [![badge](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) | Secure online code storage and Codespaces as cloud IDE for development. |
+| [![badge](https://img.shields.io/badge/Jupyter-grey?logo=jupyter&logoColor=F37626)](https://jupyter.org/) | Descriptive and predictive data analysis and documentation for the back-end. |
+| [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end and front-end programming language. |
+| [![badge](https://img.shields.io/badge/Streamlit-grey?logo=streamlit&logoColor=FF4B4B)](https://streamlit.io/) | App framework to create front-end. |
+| [![badge](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) | Hosting the deployed back-end site. |
+| [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, and explain things. |
+| [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end and front-end programming language. |
 
 ## Testing
 
