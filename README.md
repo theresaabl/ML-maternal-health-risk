@@ -132,97 +132,99 @@ Data Visualizations and ML Tasks:
 
 ## ML Business Case
 
-* In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course
+In the [Business Requirements Section](#business-requirements) above, we described the business requirements agreed on with the client who in this case is a national health organization.
 
-First draft:
+### Industries
 
-BUISINESS CASE:
+In general, industries that could be interested in a project that aims at
 
-* Better understand maternal health risk during pregnancy with the goal to define strategies and policies to decrease the health risk.
-* Understand the main indicators of low/medium/high risk
-* Predict risk for individuals or for populations
+* Better understanding of maternal health risk during pregnancy with the goal to define strategies and policies to decrease the health risk.
+* Understanding of the main indicators of low/medium/high risk
+* Predicting risk for individuals or for populations
 
-Industries:
+are:
 
-* Health and welfare
-  * WHO
-  * Local health authorities
-*	Public Policy (?)
-* Medical
+* Health and welfare organizations:
+  * World Health Organization (WHO)
+  * UNICEF, UNFPA, and other global maternal health initiatives
+  * Local health authorities and public health departments
+  * NGOs focused on maternal and child health
+* Public Policy and Government
+  * Ministries or Departments of Health
+  * Government policymakers
+  * Public health advisors
+* Medical sector
   * Hospitals
-  * OB/GYN practices
+  * OB/GYN practices and prenatal clinics
 * Research
-  * University
-  * Non-academic research (government, ngo etc)
+  * University researchers
+  * Non-academic researchers
 
-ML Model:
-  Classification
+### ML Model
 
-Questions:
+* The business objective requiring an ML solution is to classify patient by their health risk, thus we are looking for a Classifier model to fit our data and make predictions.
+* The model inputs should be health data that can be collected during routine prenatal care visits
+* The model outputs should be a prediction of the health-risk (low, medium or high) and the probabilities that the patients belongs to each of the classes (for better interpretability for in-between cases)
+* Data is available to train the model, see details about the dataset in the [Dataset Content Section](#dataset-content)
 
-* What is the business objective requiring an ML solution?
-  * Predict maternal health risk based on health data collected during routine visits
-* Is data available for the training of the model, if yes which type of data?
-  * Yes tabular data is available, it contains 6 features and 1 target:
-    * Age: object
-    * Systolic BP: int
-    * Diastolic BP: int
-    * BS: int
-    * Body temperature: int
-    * Heart rate: int
-    * Target: risk: object (low/medium/high)
-* Does the customer need a dashboard or an API endpoint?
-  * dashboard
-* What does success look like?
-  * Dashboard with all required buisiness outputs:
-* Can you break down the project into Epics and User Stories?
-  * Information gathering and data collection
-  * Data visualization, cleaning, and preparation
-  * Model training, validation, and optimization.
-  * Dashboard planning, designing, and development
-  * Dashboard deployment and release.
-* Ethical or Privacy concerns?
-  * The Project can remain ethical if we use cell image data without the patient's name or secret information
-* What level of prediction performance is needed?
-  * Since this is a healthcare related project and we aim to identify high-risk patients we aim to optimize the ML classifier for recall of the high-risk class
-  * Ideally, a recall of 80% or higher for high-risk patients is the goal
-  * However, the dataset at hand is relatively small and also moderately imbalanced, so in this scenario a high-risk recall of 70% would also be a reasonably good performance.
-  * With hyperparameter optimization we aim to reach a recall of above 80% but the minimum acceptable recall is 70% in this project.
-* What are the project inputs and intended outputs?
-  * Input: health data for a patient
-  * Output: health risk level
-* Does the data suggest a particular model?
-  * Classification
-* How will the customer benefit?
-  * Analyses the main factors that contribute to pregnancy complications to inform health practitioners or policy makers.
-  * Makes it possible to quickly predict the maternal health risk based on basic health data that is taken during routine visits anyways.
-  * Makes the prediction more systematic and less room for individual error
-  * Combine with experience of health professionals!
-  * This allows less experienced staff to make predictions based on data from many women that they could not have gathered on their own
-  * Makes predictions quickly when under time pressure
+### Dashboard
 
-## Evaluation notes
+The customer is requesting a dashboard which provides
 
-Model without winsorizer:
+* The ML tool to predict health risk for patients
+* The results of the correlation study to better understand the relationship between the health measurements and the risk
+* Information about the model and pipelines
+* Model performance reports
 
-RandomForestClassifier with max_depth 12:
-train set high-risk recall: 88%
-test set high-risk recall: 78%
-difference: 10 percentage points
-RandomForestClassifier with max_depth 8:
-train set high-risk recall: 82%
-test set high-risk recall: 75%
-difference: 7 percentage points
+### Project Success
 
-Final model with winsorizer:
+The project will be successful if we provide a dashboard with all the required business outputs including
 
-* model with only best features:
-  * high-risk recall train: 94%
-  * high-risk recall test: 87%
-  * high-risk recall gap: 7 percentage points
-  * low-risk-precision train: 89%
-  * low-risk-precision test: 81%
-  * low-risk-precision gap: 8 percentage points
+* descriptive analysis answering business requirement 1
+* predictive analytics tool with required performance metrics answering business requirement 2
+
+### Epics and User Stories
+
+See [User Stories Section](#user-stories) below.
+
+### Ethical or Privacy Concerns
+
+* The health measurements taken for the data collection are standard measurements with no adverse effects on the patients
+* It will be important that when predictions are made on real-world patients, the health care provider as well as the patient are aware of the probabilities of the predictions.
+* The prediction results should always be combined with the experience and assessement of a health professional
+* There are no privacy concerns since the data is anonymized
+
+### Benefits for the Client
+
+* Analyses the main factors that contribute to pregnancy complications to inform health practitioners or policy makers.
+* Makes it possible to quickly predict the maternal health risk based on basic health data that is taken during routine visits anyways.
+* Makes the prediction more systematic and with less room for individual error.
+* This allows less experienced staff to make predictions based on data from many women that they could not have gathered on their own.
+* Makes predictions quickly when under time pressure.
+
+### Model Evaluation and Performance Requirements
+
+* Since this is a healthcare related project and we aim to identify high-risk patients, the goal is to optimize the ML classifier for recall of the high-risk class.
+* Ideally, a recall of 80% or higher for high-risk patients is the goal
+* While optimizing for high-risk recall, low-risk precision should also stay above 80% since it is essential that patients are not incorrectly told to have low rikk.
+* However, the dataset at hand is relatively small and also moderately imbalanced, so in this scenario a high-risk recall or low-risk precision above 70% would also be a reasonably good performance.
+* **Summary:** With hyperparameter optimization we aim to reach a high-risk recall and low-risk precision of above 80% with a focus on the high-risk recall.
+
+## User Stories
+
+We split our project into epics and user stories.
+
+Epics:
+
+* Information gathering and data collection
+* Data visualization, cleaning, and preparation
+* Model training, validation, and optimization
+* Dashboard planning, designing, and development
+* Dashboard deployment and release
+
+### EPIC: Data Collection
+
+* As a **data analyst**
 
 ## Dashboard Design
 
@@ -255,21 +257,6 @@ In this section we describe the design of the project dashboard including the pa
 | ML: Model and Evaluation | Pipeline Performance | Present a more detailed pipeline performance report, including classification reports and confusion matrices for the train and the test set | ![screenshot](documentation/dashboard/performance.png) |
 | ML: Model and Evaluation | Visualization | Visualize the train and test set confusion matrices | ![screenshot](documentation/dashboard/confusion_matrix.png) |
 
-## User Stories
-
-Examples:
-
-### EPIC: User Authentication
-
-As a Confirmed Resident I can register an account so that I can access a resident dashboard.
-
-User Stories:
-
-* As a Site User I can sign up for an account so that I can request to get access to a resident dashboard.
-* As a Site Administrator I can see all requests for a new user account so that I can confirm accounts for SharedSpaces residents only.
-* As a Confirmed Resident I can login and logout of my account so that I can access a resident dashboard.
-* As a Site User I can see a message when login does not work (yet) so that I can know whether my account has been approved yet or not.
-
 ## Possible Future Directions
 
 There are many ways in which one could improve or extend this project. Some ideas are:
@@ -281,6 +268,58 @@ There are many ways in which one could improve or extend this project. Some idea
   * More details about the measurements would be very helpful in improving the analysis and decision making (e.g. age values, blood sugar measurements)
 * It would be very interesting to also study this data with a clustering model to study whether the algorithm finds similar clusters as the health risk labels or if it finds additional structure within the data.
 * An even more extensive hyperparameter optimization together with a larger dataset and more feature engineering (when having more information about the health measurement details) could help improve the prediction performance.
+
+## CRISP-DM
+
+CRoss Industry Standard Process for Data Mining
+
+### Business Understanding
+
+See above
+
+### Data Understanding
+
+### Data Preparation
+
+#### Data Cleaning
+
+#### Sample Rebalancing
+
+#### Feature Engineering
+
+### Modeling
+
+#### Model and Hyperparameter Search
+
+#### Important Features
+
+### Evaluation
+
+Notes:
+Model without winsorizer:
+
+RandomForestClassifier with max_depth 12:
+train set high-risk recall: 88%
+test set high-risk recall: 78%
+difference: 10 percentage points
+RandomForestClassifier with max_depth 8:
+train set high-risk recall: 82%
+test set high-risk recall: 75%
+difference: 7 percentage points
+
+Final model with winsorizer:
+
+* model with only best features:
+  * high-risk recall train: 94%
+  * high-risk recall test: 87%
+  * high-risk recall gap: 7 percentage points
+  * low-risk-precision train: 89%
+  * low-risk-precision test: 81%
+  * low-risk-precision gap: 8 percentage points
+
+### Deployment
+
+see below
 
 ## Main Data Analysis and Machine Learning Libraries
 
