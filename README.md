@@ -226,8 +226,32 @@ Final model with winsorizer:
 
 ## Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-* Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
+In this section we describe the design of the project dashboard including the pages and sections, the content of each section and a screenshot of the finished product.
+
+| Page | Section | Content | Screenshot |
+| --- | --- | --- | --- |
+| All Pages | Menu | | ![screenshot](documentation/dashboard/menu.png) |
+| Project Summary Page | Project summary | | ![screenshot](documentation/dashboard/project_summary.png) |
+| Project Summary Page | Dataset summary | | ![screenshot](documentation/dashboard/dataset_summary.png) |
+| Project Summary Page | Link to documentation | | ![screenshot](documentation/dashboard/readme_link.png) |
+| Project Summary Page | Business requirements | | ![screenshot](documentation/dashboard/business_requirements.png) |
+| Maternal Health Risk Study Page | Maternal Health Risk Study Summary | | ![screenshot](documentation/dashboard/maternal_health_risk_study_summary.png) |
+| Maternal Health Risk Study Page | Checkboxes to display and hide different sections | | ![screenshot](documentation/dashboard/checkboxes.png) |
+| Maternal Health Risk Study Page | Inspect Maternal Health Risk Dataset | | ![screenshot](documentation/dashboard/inspect_dataset.png) |
+| Maternal Health Risk Study Page | Correlation Study Results | | ![screenshot](documentation/dashboard/correlation_study_results.png) |
+| Maternal Health Risk Study Page | Correlation and PPS Heatmaps | | ![screenshot](documentation/dashboard/correlation_heatmaps.png) |
+| Maternal Health Risk Study Page | Variable Distributions by Health Risk Level | | ![screenshot](documentation/dashboard/correlation_distributions.png) |
+| Maternal Health Risk Study Page | Parallel Plot to Visualize Variable Relationships | | ![screenshot](documentation/dashboard/correlation_parallel_plot.png) |
+| Project Hypotheses and Validation Page | Project Hypotheses and Validation | | ![screenshot](documentation/dashboard/hypotheses_validation.png) |
+| Predict Health Risk Levels Page | Predict Health Risk Levels Prediction Tool | | ![screenshot](documentation/dashboard/predict_risk_level.png) |
+| Predict Health Risk Levels Page | Prediction for Low Risk | | ![screenshot](documentation/dashboard/prediction_low_risk.png) |
+| Predict Health Risk Levels Page | Prediction for Medium Risk | | ![screenshot](documentation/dashboard/prediction_mid_risk.png) |
+| Predict Health Risk Levels Page | Prediction for High Risk | | ![screenshot](documentation/dashboard/prediction_high_risk.png) |
+| ML: Model and Evaluation | Model and Evaluation Summary | | ![screenshot](documentation/dashboard/model_evaluation_summary.png) |
+| ML: Model and Evaluation | ML Pipelines | | ![screenshot](documentation/dashboard/ml_pipelines.png) |
+| ML: Model and Evaluation | Features | | ![screenshot](documentation/dashboard/features.png) |
+| ML: Model and Evaluation | Pipeline Performance | | ![screenshot](documentation/dashboard/performance.png) |
+| ML: Model and Evaluation | Visualization | | ![screenshot](documentation/dashboard/confusion_matrix.png) |
 
 ## User Stories
 

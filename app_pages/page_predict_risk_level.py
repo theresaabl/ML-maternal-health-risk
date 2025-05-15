@@ -20,7 +20,7 @@ def page_predict_risk_level_body():
         f"outputs/ml_pipeline/{version}/best_features/clf_pipeline_model.pkl"
         )
 
-    st.write("## Predict Maternal Health Risk Levels")
+    st.write("## Predict Health Risk Levels")
 
     st.success(
         "This page answers business requirement 2:\n"
@@ -31,7 +31,7 @@ def page_predict_risk_level_body():
     st.write("---")
 
     st.write(
-        "#### Predict a patients maternal health risk level:"
+        "#### Predict a patient's maternal health risk level:"
     )
     st.info("The categories are low-risk, medium-risk and high-risk.")
     st.write("Please fill in the following measurements for the patient:")
