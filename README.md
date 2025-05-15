@@ -248,7 +248,7 @@ We split our project into epics and user stories.
 * As a **data practitioner**, I can provide the ML predition tool so that I can share it with the client.
 * As a **client**, I can see a project summary including a dataset summary and the business requirements so that I can know what this project is about.
 * As a **client**, I can inspect the dataset so that I can see what data was used for the analysis.
-* As a **client**, I can see the results of the correlation study so that I can better understand which varialbes are most correlated to the health risk level.
+* As a **client**, I can see the results of the correlation study so that I can better understand which variables are most correlated to the health risk level.
 * As a **client**, I can see visualizations of the correlation study so that I can better understand the relationships between the variables.
 * As a **client**, I can see the project hypotheses and validation so that I can see at first sight what the results of the analysis are.
 * As a **client**, I can access the ML Classification tool so that I can make predictions on the health risk of real patients by inputting a few health measurements.
@@ -290,6 +290,22 @@ In this section we describe the design of the project dashboard including the pa
 | ML: Model and Evaluation | Pipeline Performance | Present a more detailed pipeline performance report, including classification reports and confusion matrices for the train and the test set | ![screenshot](documentation/dashboard/performance.png) |
 | ML: Model and Evaluation | Visualization | Visualize the train and test set confusion matrices | ![screenshot](documentation/dashboard/confusion_matrix.png) |
 
+## CRISP-DM
+
+We followed CRISP-DM (CRoss Industry Standard Process for Data Mining) while developing this project:
+
+| CRISP-DM Step | File(s) | Content | Results | Plots |
+| --- | --- | --- | --- | --- |
+| **Business Understanding** | [README.md](README.md) | See [Business Requirements](#business-requirements), [Business Case](#ml-business-case) | [Business Requirements](#business-requirements) |  |
+| **Data Understanding** | [02-MaternalHealthRiskStudyA.ipynb](jupyter_notebooks/02-MaternalHealthRiskStudyA.ipynb), [03-MaternalHealthRiskStudyA.ipynb](jupyter_notebooks/03-MaternalHealthRiskStudyB.ipynb)  | Inspect data, look for missing values, analyse outliers, first correlation study | No missing values, a few erronous data entries, find outliers, most correlated features, distributions by risk level | ![Box Plots](documentation/plots/box-plots.png)![Distributions by Risk Level](documentation/plots/distributions_by_risk_level.png)![Parallel Plot](documentation/plots/parallel_plot.png) |
+| **Data Preparation** - Data Cleaning | [04-DataCleaning.ipynb](jupyter_notebooks/04-DataCleaning.ipynb) | Remove erronous data, correlation and PPS study with cleaned data | Cleaned dataset, correlation study results | ![Spearman Correlation Heatmap](documentation/plots/correlation_spearman_heatmap.png)![PPS Heatmap](documentation/plots/pps_heatmap.png) |
+| **Data Preparation** - Sample Rebalancing | [06-ModellingAndEvaluation-ClassificationA.ipynb](jupyter_notebooks/06-ModellingAndEvaluation-ClassificationA.ipynb), [07-ModellingAndEvaluation-ClassificationB.ipynb](jupyter_notebooks/07-ModellingAndEvaluation-ClassificationB.ipynb)  | Analyse sample target balance, improve balance with moderate oversampling (to avoid overfitting) | Resampled train set | ![Target Balance](documentation/plots/target_balance.png)![Target Balance Resampled](documentation/plots/target_balance_resampled.png) |
+| **Data Preparation** - Feature Engineering | [05-FeatureEngineering.ipynb](jupyter_notebooks/05-FeatureEngineering.ipynb) | Analyse possible transformations that could make data more normally distributed | List of feature engineering steps to take (Box-Cox-Transformation, Outlier Winsorizer, SmartCorrelatedSelection), list of features to transform |  |
+| **Modeling** - Model and Hyperparameter Search | [06-ModellingAndEvaluation-ClassificationA.ipynb](jupyter_notebooks/06-ModellingAndEvaluation-ClassificationA.ipynb) | Find best classification model for our dataset, evaluate several ones to find the one with best recall, then perform extensive hyperparameter optimization for the best model, decide for a hyperparameter configuration while balancing best recall and best generizability, find the most important features for the model | Random Forest Classifier model with max_depth 10, best features | ![Train-Test-Gap by max_depth](documentation/plots/train-test-gap-per-depth.png)![Feature Importance](documentation/plots/feature_importance.png)  |
+| **Modeling** - Refit with Best Features | [07-ModellingAndEvaluation-ClassificationB.ipynb](jupyter_notebooks/07-ModellingAndEvaluation-ClassificationB.ipynb) | Refit the feature engineering and modelling pipeline with the best features only | Optimized model trained with only best features |  |
+| **Evaluation** | [07-ModellingAndEvaluation-ClassificationB.ipynb](jupyter_notebooks/07-ModellingAndEvaluation-ClassificationB.ipynb) | Evaluate the model, present classification report, confusion matrix | Performance metrics: high-risk recall: 94% and 87% for train and test set, low-risk precision: 89% and 81% for train and test set | ![Confusion Matrix](documentation/plots/confusion_matrix_best_features.png) |
+| **Deployment** | [README.md](README.md) | See [Deployment](#deployment) | [Live Site](https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/) |  |
+
 ## Possible Future Directions
 
 There are many ways in which one could improve or extend this project. Some ideas are:
@@ -301,45 +317,6 @@ There are many ways in which one could improve or extend this project. Some idea
   * More details about the measurements would be very helpful in improving the analysis and decision making (e.g. age values, blood sugar measurements)
 * It would be very interesting to also study this data with a clustering model to study whether the algorithm finds similar clusters as the health risk labels or if it finds additional structure within the data.
 * An even more extensive hyperparameter optimization together with a larger dataset and more feature engineering (when having more information about the health measurement details) could help improve the prediction performance.
-
-## CRISP-DM
-
-We followed CRISP-DM (CRoss Industry Standard Process for Data Mining) while developing this project:
-
-| CRISP-DM Step | File | Notes | Results | Plots |
-| --- | --- | --- | --- | --- |
-| **Business Understanding** |  |  |  |  |
-| **Data Understanding** |  |  |  |  |
-| **Data Preparation** |  |  |  |  |
-| **Data Preparation** - Data Cleaning |  |  |  |  |
-| **Data Preparation** - Sample Rebalancing |  |  |  |  |
-| **Data Preparation** - Feature Engineering |  |  |  |  |
-| **Modeling** - Model and Hyperparameter Search |  |  |  |  |
-| **Modeling** - Important Features|  |  |  |  |
-| **Evaluation** |  |  |  |  |
-| **Deployment** |  |  |  |  |
-
-Notes:
-Model without winsorizer:
-
-RandomForestClassifier with max_depth 12:
-train set high-risk recall: 88%
-test set high-risk recall: 78%
-difference: 10 percentage points
-RandomForestClassifier with max_depth 8:
-train set high-risk recall: 82%
-test set high-risk recall: 75%
-difference: 7 percentage points
-
-Final model with winsorizer:
-
-* model with only best features:
-  * high-risk recall train: 94%
-  * high-risk recall test: 87%
-  * high-risk recall gap: 7 percentage points
-  * low-risk-precision train: 89%
-  * low-risk-precision test: 81%
-  * low-risk-precision gap: 8 percentage points
 
 ## Main Data Analysis and Machine Learning Libraries
 
@@ -499,4 +476,4 @@ There are no remaining major differences between the local version when compared
 ### Acknowledgements
 
 * I would like to thank my Code Institute mentor, [Mo Shami](https://github.com/mshami) for the support throughout the development of this project.
-* I would like to thank my Code Institute mentor, [Tim Nelson](https://www.github.com/TravelTimN) for providing a great template for the documentation of this project.
+* I would like to thank my Code Institute mentor, [Tim Nelson](https://www.github.com/TravelTimN) for providing templates for general documentation and testing files.
