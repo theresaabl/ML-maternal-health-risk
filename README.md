@@ -62,7 +62,7 @@ There are **two business requirements** agreed on with the client:
   * Identify key indicators associated with low, medium, and high risk.
 * BR 2. Provide a machine learning–based tool to predict maternal health risk levels for individual patients, supporting early intervention.
 
-Further:
+Further details:
 
 * The clients goal is to use our results to develop new policies to improve pregnancy care and to support early interventions to mitigate health risks.
 * They plan to provide our predictive analytics tool to health care professionals and thus, facilitate maternal health risk assessement during prenatal care.
@@ -76,9 +76,8 @@ Further:
 We state the following three hypotheses:
 
   1. We expect that high-risk patients tend to have high blood sugar levels.
-  2. We expect that high-risk patients tend to have high systolic blood pressure levels.
-  3. We expect that high-risk patients tend to have high diastolic blood pressure levels.
-  4. We expect that high-risk patients tend to be of a higher age.
+  2. We expect that high-risk patients tend to have high blood pressure levels.
+  3. We expect that high-risk patients tend to be of a higher age.
 
 We come to these expectations by looking at literature about pregnancy health risk factors, e.g. in the following articles:
 
