@@ -71,7 +71,9 @@ def page_health_risk_study_body():
         "* We present the dataset and the main results of our descriptive "
         "analysis on this page:\n"
         "  * The variables most correlated to the health risk level\n"
-        "  * Their distributions by health risk level."
+        "  * Their distributions by health risk level\n"
+        "  * An interactive figure to visualise the relationships between "
+        "the variables and the target"
         )
 
     st.write("---")
@@ -135,14 +137,14 @@ def page_health_risk_study_body():
     if st.checkbox("#### Correlation and PPS Heatmaps"):
         st.write(
             "* Below are the Spearman correlation and the predictive power "
-            "score heatmaps to visualize the correlations and PPS between "
-            "the variables and the target, as well as between the variables "
-            "themselves.\n"
+            "score (PPS) heatmaps to visualize the correlations and PPS "
+            "between the variables and the target, as well as between the "
+            "variables themselves.\n"
             "* To get the most correlated variables\n"
             "  * we display correlation levels above 0.4 which corresponds "
-            "to moderate correlation\n"
-            "  * we display pps levels above 0.15 to show which variables "
-            "have some predictive power over other variables\n"
+            "to moderate correlation.\n"
+            "  * we display PPS levels above 0.15 to show which variables "
+            "have some predictive power over other variables.\n"
         )
 
         st.image(heatmap_corr)
@@ -154,7 +156,7 @@ def page_health_risk_study_body():
         st.write(
             "* The plots illustrate the results that were explained in the "
             "**Correlation Study Results** section above with the caveat "
-            "that both age and diastolic BP have correlation levels "
+            "that both, age and diastolic BP, have correlation levels "
             "below 0.4 with the target. Nevertheless, they are still within "
             "the four most correlated variables."
         )

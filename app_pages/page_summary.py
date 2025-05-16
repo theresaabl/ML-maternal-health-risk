@@ -51,7 +51,7 @@ def page_summary_body():
         "different hospitals, community clinics and maternal health care "
         "centers from the rural areas of Bangladesh "
         "(see dataset metadata).  \n"
-        "To inspect the dataset, pleaes see the **Maternal Health Risk** "
+        "To inspect the dataset, please see the **Maternal Health Risk** "
         "**Study** page."
         )
 
@@ -74,6 +74,6 @@ def page_summary_body():
         "1. Improve understanding of maternal health risks during pregnancy:\n"
         "   * Identify key indicators associated with low, medium, and "
         "high risk.\n"
-        "2. Provide a machine learning–based tool to predict maternal health "
+        "2. Provide a machine-learning based tool to predict maternal health "
         "risk levels for individual patients, supporting early intervention."
     )

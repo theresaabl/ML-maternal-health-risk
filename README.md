@@ -60,7 +60,7 @@ There are **two business requirements** agreed on with the client:
 
 * BR 1. Improve understanding of maternal health risks during pregnancy:
   * Identify key indicators associated with low, medium, and high risk.
-* BR 2. Provide a machine learning–based tool to predict maternal health risk levels for individual patients, supporting early intervention.
+* BR 2. Provide a machine-learning based tool to predict maternal health risk levels for individual patients, supporting early intervention.
 
 Further details:
 

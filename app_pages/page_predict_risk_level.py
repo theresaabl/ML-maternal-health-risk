@@ -24,7 +24,7 @@ def page_predict_risk_level_body():
 
     st.success(
         "This page answers business requirement 2:\n"
-        "> Provide a machine learning–based tool to predict maternal health "
+        "> Provide a machine-learning based tool to predict maternal health "
         "risk levels for individual patients, supporting early intervention.\n"
         ">\n"
         )
