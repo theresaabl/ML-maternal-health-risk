@@ -103,13 +103,15 @@ This is illustrated in the following Spearman correlation heatmap and predictive
 
 ![Spearman Correlation Heatmap](documentation/plots/correlation_spearman_heatmap.png "Spearman Correlation Heatmap")![PPS Heatmap](documentation/plots/pps_heatmap.png "PPS Heatmap")
 
+Note that correlation levels above 0.4 (moderate correlation) and PPS levels above 0.15 are illustrated. Age and diastolicBP have correlations with the target below this threshold, however they are still within the four most correlated variables.
+
 ## Mapping Business Requirements to Data Visualizations and ML Tasks
 
 Business requirements:
 
 * BR 1. Improve understanding of maternal health risks during pregnancy:
   * Identify key indicators associated with low, medium, and high risk.
-* BR 2. Provide a machine learning–based tool to predict maternal health risk levels for individual patients, supporting early intervention.
+* BR 2. Provide a machine-learning based tool to predict maternal health risk levels for individual patients, supporting early intervention.
 
 Data Visualizations and ML Tasks:
 
@@ -117,21 +119,23 @@ Data Visualizations and ML Tasks:
   * Perform a correlation study of the features with the target variable to analyse which medical measurements are most correlated to the health risk level.
   * Use heatmaps to display the correlation levels and predictive power.
   * Display the distributions of the variables per health risk level to visualize the relationship.
-  * Visualize the relationships in an interactive parallel plot that shows the relationships between all variables and the target.
+  * Visualize the relationships in an interactive parallel plot that shows the relationships between the four most correlated variables and the target.
   
 * BR 2:
   * We will predict the health risk level of a given patient &rarr; multiclass Classification.
   * Perform data cleaning and feature engineering on the dataset to best prepare it for the predictive analysis.
   * Put the steps into a data cleaning and feature engineering pipeline.
-  * The machine-learning tool will be a Classification - perform and extensive algorithm and hyperparameter search to find the best model for predictions on live data.
+  * The machine-learning tool will be a multiclass Classification - perform and extensive algorithm and hyperparameter search to find the best model for predictions on live data.
   * Balance performance and generalizability to find a model that has good recall and precision and also has a small train-test-gap (performance on test set is similar enough to train set).
   * Visualize the most important features.
   * Visualize the model performance with the help of confusion matrices.
   * Provide a live tool for predictions with user input data.
 
+These tasks are mapped out in more detail in the [User Stories](#user-stories) section below.
+
 ## ML Business Case
 
-In the [Business Requirements Section](#business-requirements) above, we described the business requirements agreed on with the client who in this case is a national health organization.
+In the [Business Requirements](#business-requirements) section above, we described the business requirements agreed on with the client who in this case is a national health organization.
 
 ### Industries
 
@@ -161,10 +165,10 @@ are:
 
 ### ML Model
 
-* The business objective requiring an ML solution is to classify patient by their health risk. Thus, we are looking for a Classifier model to fit our data and make predictions, where the health risk is the target.
-* The model inputs should be health data that can be collected during routine prenatal care visits
-* The model outputs should be a prediction of the health-risk (low, medium or high) and the probabilities that the patients belongs to each of the classes (for better interpretability for in-between cases)
-* Data is available to train the model, see details about the dataset in the [Dataset Content Section](#dataset-content)
+* The business objective requiring an ML solution is to classify patient by their health risk. Thus, we are looking for a multiclass Classifier model to fit our data and make predictions, where the health risk is the target.
+* The model inputs should be health data that can be collected during routine prenatal care visits.
+* The model outputs should be a prediction of the health-risk (low, medium or high) and the probabilities that the patient belongs to each of the classes (for better interpretability for in-between cases).
+* Data is available to train the model, see details about the dataset in the [Dataset Content](#dataset-content) section above.
 
 ### Dashboard
 
@@ -184,14 +188,14 @@ The project will be successful if we provide a dashboard with all the required b
 
 ### Epics and User Stories
 
-See [User Stories Section](#user-stories) below.
+See [User Stories](#user-stories) section below.
 
 ### Ethical or Privacy Concerns
 
-* The health measurements taken for the data collection are standard measurements with no adverse effects on the patients
-* It will be important that when predictions are made on real-world patients, the health care provider as well as the patient are aware of the probabilities of the predictions.
-* The prediction results should always be combined with the experience and assessement of a health professional
-* There are no privacy concerns since the data is anonymized
+* The health measurements taken for the data collection are standard measurements with no adverse effects on the patients.
+* It will be important that when predictions are made on real-world patients, the health care provider as well as the patient are aware of the probabilities of the predictions and shortcomings of the model.
+* The prediction results should always be combined with the experience and assessement of a health professional.
+* There are no privacy concerns since the data is anonymized.
 
 ### Benefits for the Client
 
@@ -204,8 +208,8 @@ See [User Stories Section](#user-stories) below.
 ### Model Evaluation and Performance Requirements
 
 * Since this is a healthcare related project and we aim to identify high-risk patients, the goal is to optimize the ML classifier for recall of the high-risk class.
-* Ideally, a recall of 80% or higher for high-risk patients is the goal
-* While optimizing for high-risk recall, low-risk precision should also stay above 80% since it is essential that patients are not incorrectly told to have low rikk.
+* Ideally, a recall of 80% or higher for high-risk patients is the goal.
+* While optimizing for high-risk recall, low-risk precision should also stay above 80% since it is essential that patients are not incorrectly told to have low risk.
 * However, the dataset at hand is relatively small and also moderately imbalanced, so in this scenario a high-risk recall or low-risk precision above 70% would also be a reasonably good performance.
 * **Summary:** With hyperparameter optimization we aim to reach a high-risk recall and low-risk precision of above 80% with a focus on the high-risk recall.
 

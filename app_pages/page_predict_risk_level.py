@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-
 from src.data_management import load_maternal_health_risk_data, load_pkl
 from src.machine_learning.predictive_analysis import predict_health_risk
 

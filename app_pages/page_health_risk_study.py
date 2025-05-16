@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import pandas as pd
 import matplotlib.pyplot as plt
 from src.data_management import load_maternal_health_risk_data
