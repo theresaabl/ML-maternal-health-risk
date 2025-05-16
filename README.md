@@ -161,7 +161,7 @@ are:
 
 ### ML Model
 
-* The business objective requiring an ML solution is to classify patient by their health risk, thus we are looking for a Classifier model to fit our data and make predictions.
+* The business objective requiring an ML solution is to classify patient by their health risk. Thus, we are looking for a Classifier model to fit our data and make predictions, where the health risk is the target.
 * The model inputs should be health data that can be collected during routine prenatal care visits
 * The model outputs should be a prediction of the health-risk (low, medium or high) and the probabilities that the patients belongs to each of the classes (for better interpretability for in-between cases)
 * Data is available to train the model, see details about the dataset in the [Dataset Content Section](#dataset-content)
@@ -295,17 +295,28 @@ We followed CRISP-DM (CRoss Industry Standard Process for Data Mining) while dev
 
 | CRISP-DM Step | File(s) | Content | Results | Plots |
 | --- | --- | --- | --- | --- |
-| **Business Understanding** | [README.md](README.md) | See [Business Requirements](#business-requirements), [Business Case](#ml-business-case) | [Business Requirements](#business-requirements) |  |
-| **Data Understanding** | [02-MaternalHealthRiskStudyA.ipynb](jupyter_notebooks/02-MaternalHealthRiskStudyA.ipynb), [03-MaternalHealthRiskStudyA.ipynb](jupyter_notebooks/03-MaternalHealthRiskStudyB.ipynb)  | Inspect data, look for missing values, analyse outliers, first correlation study | No missing values, a few erronous data entries, find outliers, most correlated features, distributions by risk level | ![Box Plots](documentation/plots/box-plots.png)![Distributions by Risk Level](documentation/plots/distributions_by_risk_level.png)![Parallel Plot](documentation/plots/parallel_plot.png) |
+| **Business Understanding** | [README.md](README.md) | See [Business Requirements](#business-requirements), [Business Case](#ml-business-case) sections | [Business Requirements](#business-requirements) |  |
+| **Data Understanding** | [01-DataCollection.ipynb](jupyter_notebooks/01-DataCollection.ipynb), [02-MaternalHealthRiskStudyA.ipynb](jupyter_notebooks/02-MaternalHealthRiskStudyA.ipynb), [03-MaternalHealthRiskStudyA.ipynb](jupyter_notebooks/03-MaternalHealthRiskStudyB.ipynb)  | Inspect data, look for missing values, analyse outliers, first correlation study | No missing values, a few erronous data entries, find outliers, most correlated features, distributions by risk level | ![Box Plots](documentation/plots/box-plots.png)![Distributions by Risk Level](documentation/plots/distributions_by_risk_level.png)![Parallel Plot](documentation/plots/parallel_plot.png) |
 | **Data Preparation** - Data Cleaning | [04-DataCleaning.ipynb](jupyter_notebooks/04-DataCleaning.ipynb) | Remove erronous data, correlation and PPS study with cleaned data | Cleaned dataset, correlation study results | ![Spearman Correlation Heatmap](documentation/plots/correlation_spearman_heatmap.png)![PPS Heatmap](documentation/plots/pps_heatmap.png) |
-| **Data Preparation** - Sample Rebalancing | [06-ModellingAndEvaluation-ClassificationA.ipynb](jupyter_notebooks/06-ModellingAndEvaluation-ClassificationA.ipynb), [07-ModellingAndEvaluation-ClassificationB.ipynb](jupyter_notebooks/07-ModellingAndEvaluation-ClassificationB.ipynb)  | Analyse sample target balance, improve balance with moderate oversampling (to avoid overfitting) | Resampled train set | ![Target Balance](documentation/plots/target_balance.png)![Target Balance Resampled](documentation/plots/target_balance_resampled.png) |
 | **Data Preparation** - Feature Engineering | [05-FeatureEngineering.ipynb](jupyter_notebooks/05-FeatureEngineering.ipynb) | Analyse possible transformations that could make data more normally distributed | List of feature engineering steps to take (Box-Cox-Transformation, Outlier Winsorizer, SmartCorrelatedSelection), list of features to transform |  |
+| **Data Preparation** - Sample Rebalancing | [06-ModellingAndEvaluation-ClassificationA.ipynb](jupyter_notebooks/06-ModellingAndEvaluation-ClassificationA.ipynb), [07-ModellingAndEvaluation-ClassificationB.ipynb](jupyter_notebooks/07-ModellingAndEvaluation-ClassificationB.ipynb)  | Analyse sample target balance, improve balance with moderate oversampling (to avoid overfitting) | Resampled train set | ![Target Balance](documentation/plots/target_balance.png)![Target Balance Resampled](documentation/plots/target_balance_resampled.png) |
 | **Modeling** - Model and Hyperparameter Search | [06-ModellingAndEvaluation-ClassificationA.ipynb](jupyter_notebooks/06-ModellingAndEvaluation-ClassificationA.ipynb) | Find best classification model for our dataset, evaluate several ones to find the one with best recall, then perform extensive hyperparameter optimization for the best model, decide for a hyperparameter configuration while balancing best recall and best generizability, find the most important features for the model | Random Forest Classifier model with max_depth 10, best features | ![Train-Test-Gap by max_depth](documentation/plots/train-test-gap-per-depth.png)![Feature Importance](documentation/plots/feature_importance.png)  |
 | **Modeling** - Refit with Best Features | [07-ModellingAndEvaluation-ClassificationB.ipynb](jupyter_notebooks/07-ModellingAndEvaluation-ClassificationB.ipynb) | Refit the feature engineering and modelling pipeline with the best features only | Optimized model trained with only best features |  |
 | **Evaluation** | [07-ModellingAndEvaluation-ClassificationB.ipynb](jupyter_notebooks/07-ModellingAndEvaluation-ClassificationB.ipynb) | Evaluate the model, present classification report, confusion matrix | Performance metrics: high-risk recall: 94% and 87% for train and test set, low-risk precision: 89% and 81% for train and test set | ![Confusion Matrix](documentation/plots/confusion_matrix_best_features.png) |
-| **Deployment** | [README.md](README.md) | See [Deployment](#deployment) | [Live Site](https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/) |  |
+| **Deployment** | [README.md](README.md) | See [Deployment](#deployment) section | [Live Site](https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/) |  |
 
-## Possible Future Directions
+## Conclusions and Future Directions
+
+To conclude, all [business requirements](#business-requirements) were met and the results are presented in the [dashboard](https://maternal-health-risk-predictor-f82f6452b3b6.herokuapp.com/).
+
+* We conducted a detailed correlation study and presented the results on the Maternal Health Risk Study page of the dashboard, including the most correlated features to the target and visualizations.
+* We present the project hypotheses and their validation on the Projet Hypotheses and Validation page of the dashboard.
+* We cleaned the data, performed feature engineering and an extensive hyperparameter search to find an optimized ML Classification model to predict the health risk of patients.
+* This ML tool is provided on the Predict Health Risk Levels Page of the dashboard, where a patient's health risk level can be predicted from three user input health measurements.
+* The ML pipeline details and their evaluation are presented on the ML: Model and Evaluation page of the dashboard.
+* The pipeline performance meets the requirements stated in the [business case](#ml-business-case) section:
+  * The high-risk recall is 94% and 87% for train and test set respectively, well exceeding the requirement of 80%.
+  * The low-risk precision is 89% and 81% for train and test set respectively, also meeting the requirement of 80%.
 
 There are many ways in which one could improve or extend this project. Some ideas are:
 
