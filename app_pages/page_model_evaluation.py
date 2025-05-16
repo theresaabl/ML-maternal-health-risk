@@ -101,6 +101,10 @@ def page_model_evaluation_body():
             f"| {feat_list[0]} | {feat_list[1]} | {feat_list[2]} |\n"
             "| --- | --- | --- |"
             )
+        st.write(
+            "The relative importance of the model features is illustrated "
+            "in this plot:"
+            )
         st.image(feat_importance_plot)
         st.write("---")
 
@@ -121,4 +125,10 @@ def page_model_evaluation_body():
 
     # Show confusion matrix plot
     if st.checkbox("#### Visualization"):
+        st.write(
+            "The confusion matrices for the train and test set are "
+            "visualised in the following plot. The predicted values for "
+            "the risk level are on the x-axis and the true values are on "
+            "the y-axis."
+        )
         st.image(confusion_matrix_plot)

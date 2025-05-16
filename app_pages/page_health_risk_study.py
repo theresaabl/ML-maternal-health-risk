@@ -138,8 +138,11 @@ def page_health_risk_study_body():
             "score heatmaps to visualize the correlations and PPS between "
             "the variables and the target, as well as between the variables "
             "themselves.\n"
-            "* The plots show the results that were explained in the "
-            "**Correlation Study Results** section above."
+            "* To get the most correlated variables\n"
+            "  * we display correlation levels above 0.4 which corresponds "
+            "to moderate correlation\n"
+            "  * we display pps levels above 0.15 to show which variables "
+            "have some predictive power over other variables\n"
         )
 
         st.image(heatmap_corr)
@@ -148,9 +151,22 @@ def page_health_risk_study_body():
 
         st.image(heatmap_pps)
 
+        st.write(
+            "* The plots illustrate the results that were explained in the "
+            "**Correlation Study Results** section above with the caveat "
+            "that both age and diastolic BP have correlation levels "
+            "below 0.4 with the target. Nevertheless, they are still within "
+            "the four most correlated variables."
+        )
+
         st.write("---")
 
     if st.checkbox("Variable Distributions by Health Risk Level"):
+        st.write(
+            "* The plots below illustrate the distributions of the strongest "
+            "correlated variables by the health risk level."
+        )
+
         st.image(distributions_by_health_risk_plot)
 
         st.write(
